@@ -1,0 +1,1500 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont">
+    <Prefix name="" IRI="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Anti-inflammatoire"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Antibiotique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Antidépresseu"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cabinet_médical"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Centre_de_Rééducation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Chirurgien"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Clinique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Etablissement_de_sante"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hôpital"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Infirmier"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Maladie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Maladie_Cardiovasculaire"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Maladie_Respiratoire"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Orthophoniste"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Patient"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Patient_Ambulatoire"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Patient_Chronique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Patient_Hospitalisé"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Patient_Psychiatrique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pharmacie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pharmacien"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Produit_Pharmaceutique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Professionnel_de_la_sante"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Psychiatre"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Radiologue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sante"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vitamine"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Cabinets_Médicaux_prop"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Centres_de_Rééducation_prop"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Cliniques_prop"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Hôpitaux_prop"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Maladies_Prop"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Patient_Prop"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Patients_Ambulatoires_prop"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Patients_Chroniques_prop"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Patients_Hospitalisés"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Patients_Psychiatriques"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Produits_Pharmaceutiques_prop"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Professionnels_de_la_Santé_prop"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aAvecDosage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aConsulté"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aDesEffetsSecondaires"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aDesInstructions"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aDesMaladiesChroniques"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aDesMédicamentsPrescrits"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aDesServicesD&apos;Urgence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aDesSymptômes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aLeProchainRendezVous"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aMaladie"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aPourAdresse"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aPourDuréeDeRééducation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aPourHeuresDeConsultation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aPourMédecin"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aPourNuméroDeTéléphone"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aPourSpécialité"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aPrescrit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aUnDiagnostic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aUnDiagnosticPsychiatrique"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aUnNuméroDeDossierMédical"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aUnNuméroDeLicence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aUnNuméroDeLit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aUnSuiviThérapeutique"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aUnTraitement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aUneCapacite"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aUneCapacité"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aUneOrdonnance"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#estAdmisÀ"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#travailleDans"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Établissements_prop"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#aAvecDosage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#aDesEffetsSecondaires"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#aDesInstructions"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#aPourAge"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#aPourDateDeNaissance"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#aPourNom"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#aPourSpecialite"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#apourAdresse"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#apourTauxDeReduction"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ABC_Pharmacy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Amoxicillin"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Anderson_Medical_Center"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Asthma"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Celebrex"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Chronic_Obstructive_Pulmonary_Disease_(COPD)"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Community_Drugstore"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Coronary_Artery_Disease"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dr._Emily_Miller,_MD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dr._Michael_Brown,_MD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dr._Sandra_Martinez,_PharmD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dr._Susan_Adams,_MD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dr_Emily_Anderson"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Family_Health_Clinic"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hypertensive_Heart_Disease"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ibuprofen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#John_Smith"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Karen_Anderson,_Speech-Language_Pathologist"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mary_Johnson"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mercy_General_Hospital"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#New_Horizons_Rehabilitation_Center"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nurse_Jessica_Wilson,_RN"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Prozac"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#QuickCare_Clinic"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Riverside_Regional_Medical_Center"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Smith_Family_Practice"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vitamin_C"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Vitamin_D"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Wellness_Rehab_Services"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Zoloft"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Anti-inflammatoire"/>
+        <Class IRI="#Produit_Pharmaceutique"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Anti-inflammatoire"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#aDesMédicamentsPrescrits"/>
+            <Class IRI="#Patient"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Anti-inflammatoire"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#aUnTraitement"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Antibiotique"/>
+        <Class IRI="#Produit_Pharmaceutique"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Antidépresseu"/>
+        <Class IRI="#Produit_Pharmaceutique"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cabinet_médical"/>
+        <Class IRI="#Etablissement_de_sante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Centre_de_Rééducation"/>
+        <Class IRI="#Etablissement_de_sante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Chirurgien"/>
+        <Class IRI="#Professionnel_de_la_sante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Chirurgien"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#travailleDans"/>
+            <Class IRI="#Etablissement_de_sante"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Clinique"/>
+        <Class IRI="#Etablissement_de_sante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Etablissement_de_sante"/>
+        <Class IRI="#Sante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hôpital"/>
+        <Class IRI="#Etablissement_de_sante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Infirmier"/>
+        <Class IRI="#Professionnel_de_la_sante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Infirmier"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#travailleDans"/>
+            <Class IRI="#Etablissement_de_sante"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Maladie"/>
+        <Class IRI="#Sante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Maladie"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#aMaladie"/>
+            <Class IRI="#Maladie"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Maladie_Cardiovasculaire"/>
+        <Class IRI="#Maladie"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Maladie_Respiratoire"/>
+        <Class IRI="#Maladie"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Maladie_Respiratoire"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#aPrescrit"/>
+            <Class IRI="#Anti-inflammatoire"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Orthophoniste"/>
+        <Class IRI="#Professionnel_de_la_sante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Patient"/>
+        <Class IRI="#Sante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Patient"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#aConsulté"/>
+            <Class IRI="#Professionnel_de_la_sante"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Patient_Ambulatoire"/>
+        <Class IRI="#Patient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Patient_Chronique"/>
+        <Class IRI="#Patient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Patient_Chronique"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#aDesMaladiesChroniques"/>
+            <Class IRI="#Maladie_Cardiovasculaire"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Patient_Hospitalisé"/>
+        <Class IRI="#Patient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Patient_Psychiatrique"/>
+        <Class IRI="#Patient"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pharmacie"/>
+        <Class IRI="#Etablissement_de_sante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pharmacie"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#aDesSymptômes"/>
+            <Class IRI="#Maladie"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pharmacien"/>
+        <Class IRI="#Professionnel_de_la_sante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Produit_Pharmaceutique"/>
+        <Class IRI="#Sante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Professionnel_de_la_sante"/>
+        <Class IRI="#Sante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Psychiatre"/>
+        <Class IRI="#Professionnel_de_la_sante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Radiologue"/>
+        <Class IRI="#Professionnel_de_la_sante"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vitamine"/>
+        <Class IRI="#Produit_Pharmaceutique"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Pharmacie"/>
+        <NamedIndividual IRI="#ABC_Pharmacy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Antibiotique"/>
+        <NamedIndividual IRI="#Amoxicillin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cabinet_médical"/>
+        <NamedIndividual IRI="#Anderson_Medical_Center"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Maladie_Respiratoire"/>
+        <NamedIndividual IRI="#Asthma"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Anti-inflammatoire"/>
+        <NamedIndividual IRI="#Celebrex"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Maladie_Respiratoire"/>
+        <NamedIndividual IRI="#Chronic_Obstructive_Pulmonary_Disease_(COPD)"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pharmacie"/>
+        <NamedIndividual IRI="#Community_Drugstore"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Maladie_Cardiovasculaire"/>
+        <NamedIndividual IRI="#Coronary_Artery_Disease"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Radiologue"/>
+        <NamedIndividual IRI="#Dr._Emily_Miller,_MD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Chirurgien"/>
+        <NamedIndividual IRI="#Dr._Michael_Brown,_MD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pharmacien"/>
+        <NamedIndividual IRI="#Dr._Sandra_Martinez,_PharmD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Psychiatre"/>
+        <NamedIndividual IRI="#Dr._Susan_Adams,_MD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Chirurgien"/>
+        <NamedIndividual IRI="#Dr_Emily_Anderson"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Clinique"/>
+        <NamedIndividual IRI="#Family_Health_Clinic"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Maladie_Cardiovasculaire"/>
+        <NamedIndividual IRI="#Hypertensive_Heart_Disease"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Anti-inflammatoire"/>
+        <NamedIndividual IRI="#Ibuprofen"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Patient"/>
+        <NamedIndividual IRI="#John_Smith"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Orthophoniste"/>
+        <NamedIndividual IRI="#Karen_Anderson,_Speech-Language_Pathologist"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Patient"/>
+        <NamedIndividual IRI="#Mary_Johnson"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hôpital"/>
+        <NamedIndividual IRI="#Mercy_General_Hospital"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Centre_de_Rééducation"/>
+        <NamedIndividual IRI="#New_Horizons_Rehabilitation_Center"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Infirmier"/>
+        <NamedIndividual IRI="#Nurse_Jessica_Wilson,_RN"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Antidépresseu"/>
+        <NamedIndividual IRI="#Prozac"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Clinique"/>
+        <NamedIndividual IRI="#QuickCare_Clinic"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Hôpital"/>
+        <NamedIndividual IRI="#Riverside_Regional_Medical_Center"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cabinet_médical"/>
+        <NamedIndividual IRI="#Smith_Family_Practice"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Vitamine"/>
+        <NamedIndividual IRI="#Vitamin_C"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Vitamine"/>
+        <NamedIndividual IRI="#Vitamin_D"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Centre_de_Rééducation"/>
+        <NamedIndividual IRI="#Wellness_Rehab_Services"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Antidépresseu"/>
+        <NamedIndividual IRI="#Zoloft"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Amoxicillin"/>
+        <NamedIndividual IRI="#Community_Drugstore"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Amoxicillin"/>
+        <NamedIndividual IRI="#ABC_Pharmacy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Celebrex"/>
+        <NamedIndividual IRI="#Community_Drugstore"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Celebrex"/>
+        <NamedIndividual IRI="#ABC_Pharmacy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Ibuprofen"/>
+        <NamedIndividual IRI="#Community_Drugstore"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Ibuprofen"/>
+        <NamedIndividual IRI="#ABC_Pharmacy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Prozac"/>
+        <NamedIndividual IRI="#ABC_Pharmacy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Prozac"/>
+        <NamedIndividual IRI="#Community_Drugstore"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Vitamin_C"/>
+        <NamedIndividual IRI="#Community_Drugstore"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Vitamin_C"/>
+        <NamedIndividual IRI="#ABC_Pharmacy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Vitamin_D"/>
+        <NamedIndividual IRI="#ABC_Pharmacy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Vitamin_D"/>
+        <NamedIndividual IRI="#Community_Drugstore"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Zoloft"/>
+        <NamedIndividual IRI="#Community_Drugstore"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Zoloft"/>
+        <NamedIndividual IRI="#ABC_Pharmacy"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aAvecDosage"/>
+        <NamedIndividual IRI="#Amoxicillin"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">250mg to 500mg every 8 hours</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesEffetsSecondaires"/>
+        <NamedIndividual IRI="#Amoxicillin"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">nausea, diarrhea,</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesInstructions"/>
+        <NamedIndividual IRI="#Amoxicillin"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Take on an empty stomach with a full glass of water.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aAvecDosage"/>
+        <NamedIndividual IRI="#Celebrex"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">200mg once a day</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesEffetsSecondaires"/>
+        <NamedIndividual IRI="#Celebrex"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">nausea, headache,</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesInstructions"/>
+        <NamedIndividual IRI="#Celebrex"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Take with food. Do not exceed recommended dosage.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourAge"/>
+        <NamedIndividual IRI="#Dr._Emily_Miller,_MD"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">55</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourNom"/>
+        <NamedIndividual IRI="#Dr._Emily_Miller,_MD"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Emily Miller</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourSpecialite"/>
+        <NamedIndividual IRI="#Dr._Emily_Miller,_MD"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Radiologue</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourAge"/>
+        <NamedIndividual IRI="#Dr._Michael_Brown,_MD"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">36</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourNom"/>
+        <NamedIndividual IRI="#Dr._Michael_Brown,_MD"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Michael Brown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourSpecialite"/>
+        <NamedIndividual IRI="#Dr._Michael_Brown,_MD"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Chirurgien</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourAge"/>
+        <NamedIndividual IRI="#Dr._Sandra_Martinez,_PharmD"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">33</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourNom"/>
+        <NamedIndividual IRI="#Dr._Sandra_Martinez,_PharmD"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Sandra Martinez</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourSpecialite"/>
+        <NamedIndividual IRI="#Dr._Sandra_Martinez,_PharmD"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Pharmacien</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourAge"/>
+        <NamedIndividual IRI="#Dr._Susan_Adams,_MD"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">35</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourNom"/>
+        <NamedIndividual IRI="#Dr._Susan_Adams,_MD"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Susan Adams</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourSpecialite"/>
+        <NamedIndividual IRI="#Dr._Susan_Adams,_MD"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Psychiatre</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourAge"/>
+        <NamedIndividual IRI="#Dr_Emily_Anderson"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">42</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourNom"/>
+        <NamedIndividual IRI="#Dr_Emily_Anderson"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Emily Anderson</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourSpecialite"/>
+        <NamedIndividual IRI="#Dr_Emily_Anderson"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Chirurgien</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aAvecDosage"/>
+        <NamedIndividual IRI="#Ibuprofen"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">400mg to 800mg every 6 to 8 hours</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesEffetsSecondaires"/>
+        <NamedIndividual IRI="#Ibuprofen"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">stomach pain, heartburn,</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesInstructions"/>
+        <NamedIndividual IRI="#Ibuprofen"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Take with a full glass of water. Do not exceed recommended dosage.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourNom"/>
+        <NamedIndividual IRI="#Karen_Anderson,_Speech-Language_Pathologist"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Karen Anderson</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourSpecialite"/>
+        <NamedIndividual IRI="#Karen_Anderson,_Speech-Language_Pathologist"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Orthophoniste</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourAge"/>
+        <NamedIndividual IRI="#Nurse_Jessica_Wilson,_RN"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">27</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourNom"/>
+        <NamedIndividual IRI="#Nurse_Jessica_Wilson,_RN"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Jessica Wilson</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aPourSpecialite"/>
+        <NamedIndividual IRI="#Nurse_Jessica_Wilson,_RN"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Infirmier</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aAvecDosage"/>
+        <NamedIndividual IRI="#Prozac"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">20mg to 80mg per day</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesEffetsSecondaires"/>
+        <NamedIndividual IRI="#Prozac"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">nausea, insomnia,</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesInstructions"/>
+        <NamedIndividual IRI="#Prozac"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Take with or without food. Follow doctor&apos;s instructions.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesEffetsSecondaires"/>
+        <NamedIndividual IRI="#Vitamin_C"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Nothing.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesInstructions"/>
+        <NamedIndividual IRI="#Vitamin_C"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">400 IU to 800 IU per day</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesInstructions"/>
+        <NamedIndividual IRI="#Vitamin_C"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Take with water and food for better absorption.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aAvecDosage"/>
+        <NamedIndividual IRI="#Vitamin_D"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">400 IU to 800 IU per day</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesEffetsSecondaires"/>
+        <NamedIndividual IRI="#Vitamin_D"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Nothing.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesInstructions"/>
+        <NamedIndividual IRI="#Vitamin_D"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Take with a meal to enhance absorption.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aAvecDosage"/>
+        <NamedIndividual IRI="#Zoloft"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">50mg to 200mg per day</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesEffetsSecondaires"/>
+        <NamedIndividual IRI="#Zoloft"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">dizziness, nausea</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesInstructions"/>
+        <NamedIndividual IRI="#Zoloft"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Take Zoloft with or without food, usually once daily in the morning.</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Cabinets_Médicaux_prop"/>
+        <ObjectProperty IRI="#Établissements_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Centres_de_Rééducation_prop"/>
+        <ObjectProperty IRI="#Établissements_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Cliniques_prop"/>
+        <ObjectProperty IRI="#Établissements_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Hôpitaux_prop"/>
+        <ObjectProperty IRI="#Établissements_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Maladies_Prop"/>
+        <ObjectProperty IRI="#aPrescrit"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Patients_Ambulatoires_prop"/>
+        <ObjectProperty IRI="#Patient_Prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Patients_Chroniques_prop"/>
+        <ObjectProperty IRI="#Patient_Prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Patients_Hospitalisés"/>
+        <ObjectProperty IRI="#Patient_Prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Patients_Psychiatriques"/>
+        <ObjectProperty IRI="#Patient_Prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <ObjectProperty IRI="#Établissements_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aAvecDosage"/>
+        <ObjectProperty IRI="#Produits_Pharmaceutiques_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aConsulté"/>
+        <ObjectProperty IRI="#Patient_Prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aDesEffetsSecondaires"/>
+        <ObjectProperty IRI="#Produits_Pharmaceutiques_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aDesInstructions"/>
+        <ObjectProperty IRI="#Produits_Pharmaceutiques_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aDesMaladiesChroniques"/>
+        <ObjectProperty IRI="#Patients_Chroniques_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aDesMédicamentsPrescrits"/>
+        <ObjectProperty IRI="#Patients_Chroniques_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aDesServicesD&apos;Urgence"/>
+        <ObjectProperty IRI="#Hôpitaux_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aDesSymptômes"/>
+        <ObjectProperty IRI="#Maladies_Prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aLeProchainRendezVous"/>
+        <ObjectProperty IRI="#Patients_Ambulatoires_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aMaladie"/>
+        <ObjectProperty IRI="#Patient_Prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aPourAdresse"/>
+        <ObjectProperty IRI="#Établissements_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aPourDuréeDeRééducation"/>
+        <ObjectProperty IRI="#Centres_de_Rééducation_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aPourHeuresDeConsultation"/>
+        <ObjectProperty IRI="#Cabinets_Médicaux_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aPourMédecin"/>
+        <ObjectProperty IRI="#Cabinets_Médicaux_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aPourNuméroDeTéléphone"/>
+        <ObjectProperty IRI="#Établissements_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aPourSpécialité"/>
+        <ObjectProperty IRI="#Professionnels_de_la_Santé_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aUnDiagnostic"/>
+        <ObjectProperty IRI="#Patients_Hospitalisés"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aUnDiagnosticPsychiatrique"/>
+        <ObjectProperty IRI="#Patients_Psychiatriques"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aUnNuméroDeDossierMédical"/>
+        <ObjectProperty IRI="#Patient_Prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aUnNuméroDeLicence"/>
+        <ObjectProperty IRI="#Professionnels_de_la_Santé_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aUnNuméroDeLit"/>
+        <ObjectProperty IRI="#Patients_Hospitalisés"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aUnSuiviThérapeutique"/>
+        <ObjectProperty IRI="#Patients_Psychiatriques"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aUnTraitement"/>
+        <ObjectProperty IRI="#Maladies_Prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aUneCapacite"/>
+        <ObjectProperty IRI="#Hôpitaux_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aUneCapacité"/>
+        <ObjectProperty IRI="#Cliniques_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aUneOrdonnance"/>
+        <ObjectProperty IRI="#Patients_Ambulatoires_prop"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#estAdmisÀ"/>
+        <ObjectProperty IRI="#Patients_Hospitalisés"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aAvecDosage"/>
+        <Class IRI="#Produit_Pharmaceutique"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aConsulté"/>
+        <Class IRI="#Patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aDesEffetsSecondaires"/>
+        <Class IRI="#Produit_Pharmaceutique"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aDesInstructions"/>
+        <Class IRI="#Produit_Pharmaceutique"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aDesMaladiesChroniques"/>
+        <Class IRI="#Patient_Chronique"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aDesMédicamentsPrescrits"/>
+        <Class IRI="#Patient_Chronique"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aDesServicesD&apos;Urgence"/>
+        <Class IRI="#Hôpital"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aDesSymptômes"/>
+        <Class IRI="#Maladie"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aLeProchainRendezVous"/>
+        <Class IRI="#Patient_Ambulatoire"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aMaladie"/>
+        <Class IRI="#Patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aPourAdresse"/>
+        <Class IRI="#Etablissement_de_sante"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aPourDuréeDeRééducation"/>
+        <Class IRI="#Centre_de_Rééducation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aPourMédecin"/>
+        <Class IRI="#Cabinet_médical"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aPourNuméroDeTéléphone"/>
+        <Class IRI="#Etablissement_de_sante"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aPourSpécialité"/>
+        <Class IRI="#Professionnel_de_la_sante"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aPrescrit"/>
+        <Class IRI="#Chirurgien"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aPrescrit"/>
+        <Class IRI="#Orthophoniste"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aPrescrit"/>
+        <Class IRI="#Psychiatre"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aUnDiagnostic"/>
+        <Class IRI="#Patient_Hospitalisé"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aUnDiagnosticPsychiatrique"/>
+        <Class IRI="#Patient_Psychiatrique"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aUnNuméroDeDossierMédical"/>
+        <Class IRI="#Patient"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aUnNuméroDeLicence"/>
+        <Class IRI="#Professionnel_de_la_sante"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aUnNuméroDeLit"/>
+        <Class IRI="#Patient_Hospitalisé"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aUnSuiviThérapeutique"/>
+        <Class IRI="#Patient_Psychiatrique"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aUnTraitement"/>
+        <Class IRI="#Maladie"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aUneCapacite"/>
+        <Class IRI="#Hôpital"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aUneCapacité"/>
+        <Class IRI="#Clinique"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aUneOrdonnance"/>
+        <Class IRI="#Patient_Ambulatoire"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#estAdmisÀ"/>
+        <Class IRI="#Patient_Hospitalisé"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#travailleDans"/>
+        <Class IRI="#Professionnel_de_la_sante"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aAvecDosage"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aConsulté"/>
+        <Class IRI="#Chirurgien"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aConsulté"/>
+        <Class IRI="#Orthophoniste"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aConsulté"/>
+        <Class IRI="#Pharmacien"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aConsulté"/>
+        <Class IRI="#Psychiatre"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aConsulté"/>
+        <Class IRI="#Radiologue"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aDesEffetsSecondaires"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aDesInstructions"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aDesMaladiesChroniques"/>
+        <Class IRI="#Maladie"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aDesMédicamentsPrescrits"/>
+        <Class IRI="#Produit_Pharmaceutique"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aDesServicesD&apos;Urgence"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:boolean"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aDesSymptômes"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aLeProchainRendezVous"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aMaladie"/>
+        <Class IRI="#Maladie"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aPourAdresse"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aPourDuréeDeRééducation"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aPourMédecin"/>
+        <Class IRI="#Chirurgien"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aPourMédecin"/>
+        <Class IRI="#Orthophoniste"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aPourMédecin"/>
+        <Class IRI="#Psychiatre"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aPourNuméroDeTéléphone"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aPourSpécialité"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aPrescrit"/>
+        <Class IRI="#Produit_Pharmaceutique"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aUnDiagnostic"/>
+        <Class IRI="#Maladie"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aUnDiagnosticPsychiatrique"/>
+        <Class IRI="#Maladie"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aUnNuméroDeDossierMédical"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aUnNuméroDeLicence"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aUnNuméroDeLit"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aUnSuiviThérapeutique"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aUnTraitement"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aUneCapacite"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aUneCapacité"/>
+        <DataSomeValuesFrom>
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
+        </DataSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aUneOrdonnance"/>
+        <Class IRI="#Produit_Pharmaceutique"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#estAdmisÀ"/>
+        <Class IRI="#Hôpital"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#travailleDans"/>
+        <Class IRI="#Etablissement_de_sante"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#aPourAge"/>
+        <Class IRI="#Patient"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#aPourAge"/>
+        <Class IRI="#Patient_Ambulatoire"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#aPourAge"/>
+        <Class IRI="#Patient_Chronique"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#aPourAge"/>
+        <Class IRI="#Patient_Hospitalisé"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#aPourAge"/>
+        <Class IRI="#Patient_Psychiatrique"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#aPourDateDeNaissance"/>
+        <Class IRI="#Patient"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#aPourDateDeNaissance"/>
+        <Class IRI="#Patient_Ambulatoire"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#aPourDateDeNaissance"/>
+        <Class IRI="#Patient_Chronique"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#aPourDateDeNaissance"/>
+        <Class IRI="#Patient_Hospitalisé"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#aPourDateDeNaissance"/>
+        <Class IRI="#Patient_Psychiatrique"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#aPourNom"/>
+        <Class IRI="#Patient"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#aPourNom"/>
+        <Class IRI="#Patient_Ambulatoire"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#aPourNom"/>
+        <Class IRI="#Patient_Chronique"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#aPourNom"/>
+        <Class IRI="#Patient_Hospitalisé"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#aPourNom"/>
+        <Class IRI="#Patient_Psychiatrique"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#apourAdresse"/>
+        <Class IRI="#Cabinet_médical"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#apourAdresse"/>
+        <Class IRI="#Centre_de_Rééducation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#apourAdresse"/>
+        <Class IRI="#Clinique"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#apourAdresse"/>
+        <Class IRI="#Etablissement_de_sante"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#apourAdresse"/>
+        <Class IRI="#Hôpital"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#apourAdresse"/>
+        <Class IRI="#Pharmacie"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#apourTauxDeReduction"/>
+        <Class IRI="#Cabinet_médical"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#apourTauxDeReduction"/>
+        <Class IRI="#Centre_de_Rééducation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#apourTauxDeReduction"/>
+        <Class IRI="#Clinique"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#apourTauxDeReduction"/>
+        <Class IRI="#Etablissement_de_sante"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#apourTauxDeReduction"/>
+        <Class IRI="#Hôpital"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#apourTauxDeReduction"/>
+        <Class IRI="#Pharmacie"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#aPourAge"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#aPourDateDeNaissance"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#aPourNom"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#apourAdresse"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#apourTauxDeReduction"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
