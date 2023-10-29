@@ -7,3 +7,4 @@ public class QueryDTO {
     private String query;
 
 }
+
