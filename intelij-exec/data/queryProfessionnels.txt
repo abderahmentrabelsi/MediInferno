@@ -10,3 +10,5 @@ WHERE {
                             sante:aPourSpecialite ?specialite ;
                             sante:aPourAge ?age .
 }
+
+
