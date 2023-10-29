@@ -550,6 +550,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourExperience -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourExperience"/>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourNom -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourNom">
@@ -956,9 +962,13 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Emily_Miller,_MD">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Radiologue"/>
+        <aPourExperience>16</aPourExperience>
         <aPourSpecialite>Radiologue</aPourSpecialite>
         <aPourNom>Emily Miller</aPourNom>
         <aPourAge>55</aPourAge>
+        <apourAdresse>Los Angeles</apourAdresse>
+        <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Emily_Miller,_MD"/>
+        <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
     </owl:NamedIndividual>
     
 
@@ -970,6 +980,9 @@
         <aPourNom>Michael Brown</aPourNom>
         <aPourAge>36</aPourAge>
         <aPourSpecialite>Chirurgien</aPourSpecialite>
+        <aPourExperience>3</aPourExperience>
+        <apourAdresse>Chicago</apourAdresse>
+        <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
     </owl:NamedIndividual>
     
 
@@ -978,9 +991,12 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Sandra_Martinez,_PharmD">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Pharmacien"/>
+        <apourAdresse>New York</apourAdresse>
         <aPourAge>33</aPourAge>
         <aPourSpecialite>Pharmacien</aPourSpecialite>
         <aPourNom>Sandra Martinez</aPourNom>
+        <aPourExperience>10</aPourExperience>
+        <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
     </owl:NamedIndividual>
     
 
@@ -990,8 +1006,11 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Susan_Adams,_MD">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Psychiatre"/>
         <aPourSpecialite>Psychiatre</aPourSpecialite>
+        <aPourExperience>16</aPourExperience>
+        <apourAdresse>Tunis</apourAdresse>
         <aPourNom>Susan Adams</aPourNom>
         <aPourAge>35</aPourAge>
+        <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
     </owl:NamedIndividual>
     
 
@@ -1003,6 +1022,9 @@
         <aPourSpecialite>Chirurgien</aPourSpecialite>
         <aPourAge>42</aPourAge>
         <aPourNom>Emily Anderson</aPourNom>
+        <aPourExperience>5</aPourExperience>
+        <apourAdresse>Tunis</apourAdresse>
+        <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
     </owl:NamedIndividual>
     
 
@@ -1035,6 +1057,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Patient"/>
+        <aPourNom>John Smith</aPourNom>
     </owl:NamedIndividual>
     
 
@@ -1077,9 +1100,12 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Nurse_Jessica_Wilson,_RN">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Infirmier"/>
+        <aPourExperience>10</aPourExperience>
         <aPourAge>27</aPourAge>
+        <apourAdresse>Sfax</apourAdresse>
         <aPourNom>Jessica Wilson</aPourNom>
         <aPourSpecialite>Infirmier</aPourSpecialite>
+        <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
     </owl:NamedIndividual>
     
 
