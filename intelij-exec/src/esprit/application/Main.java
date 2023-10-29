@@ -22,6 +22,14 @@ public class Main {
 
                     "data/query.txt"));
 
+            System.out.println(JenaEngine.executeQueryFile(inferedModel,
+
+                    "data/queryProduit.txt"));
+
+            System.out.println(JenaEngine.executeQueryFile(inferedModel,
+
+                    "data/queryMaladie.txt"));
+
         } else {
             System.out.println("Error when reading model from ontology");
         }
