@@ -6,3 +6,4 @@ SELECT ?patient
 WHERE {
   ?patient rdf:type sante:Patient .
 }
+
