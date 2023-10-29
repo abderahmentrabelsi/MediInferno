@@ -1,11 +1,25 @@
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>
 
-SELECT ?patient ?nom ?dateDeNaissance ?age ?adresse
+SELECT ?patient ?nom ?dateDeNaissance ?age ?adresse  ?aConsulté ?aMaladie ?dossierMédical
 WHERE {
   ?patient rdf:type sante:Patient.
   ?patient sante:aPourNom ?nom.
   ?patient sante:aPourDateDeNaissance ?dateDeNaissance.
   ?patient sante:aPourAge ?age.
   ?patient sante:apourAdresse ?adresse.
+
+  OPTIONAL {
+    ?patient sante:aConsulté ?aConsulté.
+  }
+
+
+
+  OPTIONAL {
+    ?patient sante:aMaladie ?aMaladie.
+  }
+
+  OPTIONAL {
+    ?patient sante:aUnNuméroDeDossierMédical ?dossierMédical.
+  }
 }
