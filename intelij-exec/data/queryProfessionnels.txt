@@ -1,0 +1,14 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>
+
+
+SELECT ?nom ?specialite ?age
+WHERE {
+  ?professionnel_de_la_sante rdf:type sante:Professionnel_de_la_sante ;
+                            sante:aPourNom ?nom ;
+                            sante:aPourSpecialite ?specialite ;
+                            sante:aPourAge ?age .
+}
+
+
