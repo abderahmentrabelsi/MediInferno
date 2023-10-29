@@ -232,6 +232,15 @@
         <ObjectProperty IRI="#Établissements_prop"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#aAvecDosage"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#aDesEffetsSecondaires"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#aDesInstructions"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#aPourAge"/>
     </Declaration>
     <Declaration>
@@ -673,6 +682,105 @@
         <NamedIndividual IRI="#Nurse_Jessica_Wilson,_RN"/>
         <NamedIndividual IRI="#Dr._Emily_Miller,_MD"/>
     </ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Amoxicillin"/>
+        <NamedIndividual IRI="#Community_Drugstore"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Amoxicillin"/>
+        <NamedIndividual IRI="#ABC_Pharmacy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Celebrex"/>
+        <NamedIndividual IRI="#Community_Drugstore"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Celebrex"/>
+        <NamedIndividual IRI="#ABC_Pharmacy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Ibuprofen"/>
+        <NamedIndividual IRI="#Community_Drugstore"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Ibuprofen"/>
+        <NamedIndividual IRI="#ABC_Pharmacy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Prozac"/>
+        <NamedIndividual IRI="#ABC_Pharmacy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Prozac"/>
+        <NamedIndividual IRI="#Community_Drugstore"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Vitamin_C"/>
+        <NamedIndividual IRI="#Community_Drugstore"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Vitamin_C"/>
+        <NamedIndividual IRI="#ABC_Pharmacy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Vitamin_D"/>
+        <NamedIndividual IRI="#ABC_Pharmacy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Vitamin_D"/>
+        <NamedIndividual IRI="#Community_Drugstore"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Zoloft"/>
+        <NamedIndividual IRI="#Community_Drugstore"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Pharmacies_prop"/>
+        <NamedIndividual IRI="#Zoloft"/>
+        <NamedIndividual IRI="#ABC_Pharmacy"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aAvecDosage"/>
+        <NamedIndividual IRI="#Amoxicillin"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">250mg to 500mg every 8 hours</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesEffetsSecondaires"/>
+        <NamedIndividual IRI="#Amoxicillin"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">nausea, diarrhea,</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesInstructions"/>
+        <NamedIndividual IRI="#Amoxicillin"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Take on an empty stomach with a full glass of water.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aAvecDosage"/>
+        <NamedIndividual IRI="#Celebrex"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">200mg once a day</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesEffetsSecondaires"/>
+        <NamedIndividual IRI="#Celebrex"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">nausea, headache,</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesInstructions"/>
+        <NamedIndividual IRI="#Celebrex"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Take with food. Do not exceed recommended dosage.</Literal>
+    </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#aPourAge"/>
         <NamedIndividual IRI="#Dr._Emily_Miller,_MD"/>
@@ -802,6 +910,19 @@
         <DataProperty IRI="#aPourNom"/>
         <NamedIndividual IRI="#John_Smith"/>
         <Literal datatypeIRI="&rdf;PlainLiteral">John Smith</Literal>
+        <DataProperty IRI="#aAvecDosage"/>
+        <NamedIndividual IRI="#Ibuprofen"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">400mg to 800mg every 6 to 8 hours</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesEffetsSecondaires"/>
+        <NamedIndividual IRI="#Ibuprofen"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">stomach pain, heartburn,</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesInstructions"/>
+        <NamedIndividual IRI="#Ibuprofen"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Take with a full glass of water. Do not exceed recommended dosage.</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#aPourNom"/>
@@ -837,6 +958,64 @@
         <DataProperty IRI="#apourAdresse"/>
         <NamedIndividual IRI="#Nurse_Jessica_Wilson,_RN"/>
         <Literal datatypeIRI="&rdf;PlainLiteral">Sfax</Literal>
+        <DataProperty IRI="#aAvecDosage"/>
+        <NamedIndividual IRI="#Prozac"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">20mg to 80mg per day</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesEffetsSecondaires"/>
+        <NamedIndividual IRI="#Prozac"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">nausea, insomnia,</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesInstructions"/>
+        <NamedIndividual IRI="#Prozac"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Take with or without food. Follow doctor&apos;s instructions.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesEffetsSecondaires"/>
+        <NamedIndividual IRI="#Vitamin_C"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Nothing.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesInstructions"/>
+        <NamedIndividual IRI="#Vitamin_C"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">400 IU to 800 IU per day</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesInstructions"/>
+        <NamedIndividual IRI="#Vitamin_C"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Take with water and food for better absorption.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aAvecDosage"/>
+        <NamedIndividual IRI="#Vitamin_D"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">400 IU to 800 IU per day</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesEffetsSecondaires"/>
+        <NamedIndividual IRI="#Vitamin_D"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Nothing.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesInstructions"/>
+        <NamedIndividual IRI="#Vitamin_D"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Take with a meal to enhance absorption.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aAvecDosage"/>
+        <NamedIndividual IRI="#Zoloft"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">50mg to 200mg per day</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesEffetsSecondaires"/>
+        <NamedIndividual IRI="#Zoloft"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">dizziness, nausea</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#aDesInstructions"/>
+        <NamedIndividual IRI="#Zoloft"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Take Zoloft with or without food, usually once daily in the morning.</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#Cabinets_Médicaux_prop"/>
