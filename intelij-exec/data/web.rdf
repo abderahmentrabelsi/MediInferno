@@ -1105,6 +1105,7 @@
         <apourAdresse>Sfax</apourAdresse>
         <aPourNom>Jessica Wilson</aPourNom>
         <aPourSpecialite>Infirmier</aPourSpecialite>
+        <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Emily_Miller,_MD"/>
         <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
     </owl:NamedIndividual>
     
