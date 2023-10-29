@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="fuseki-server">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/apache-jena-fuseki-4.9.0/fuseki-server.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
