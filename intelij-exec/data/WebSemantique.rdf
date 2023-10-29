@@ -524,24 +524,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aAvecDosage -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aAvecDosage"/>
-    
-
-
-    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aDesEffetsSecondaires -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aDesEffetsSecondaires"/>
-    
-
-
-    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aDesInstructions -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aDesInstructions"/>
-    
-
-
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourAge -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourAge">
@@ -565,6 +547,12 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Patient_Psychiatrique"/>
         <rdfs:range rdf:resource="&xsd;integer"/>
     </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourExperience -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourExperience"/>
     
 
 
@@ -918,11 +906,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Amoxicillin">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Antibiotique"/>
-        <aAvecDosage>250mg to 500mg every 8 hours</aAvecDosage>
-        <aDesEffetsSecondaires>nausea, diarrhea,</aDesEffetsSecondaires>
-        <aDesInstructions>Take on an empty stomach with a full glass of water.</aDesInstructions>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
     </owl:NamedIndividual>
     
 
@@ -947,11 +930,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Celebrex">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Anti-inflammatoire"/>
-        <aAvecDosage>200mg once a day</aAvecDosage>
-        <aDesInstructions>Take with food. Do not exceed recommended dosage.</aDesInstructions>
-        <aDesEffetsSecondaires>nausea, headache,</aDesEffetsSecondaires>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
     </owl:NamedIndividual>
     
 
@@ -984,9 +962,13 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Emily_Miller,_MD">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Radiologue"/>
+        <aPourExperience>16</aPourExperience>
         <aPourSpecialite>Radiologue</aPourSpecialite>
         <aPourNom>Emily Miller</aPourNom>
         <aPourAge>55</aPourAge>
+        <apourAdresse>Los Angeles</apourAdresse>
+        <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Emily_Miller,_MD"/>
+        <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
     </owl:NamedIndividual>
     
 
@@ -998,6 +980,9 @@
         <aPourNom>Michael Brown</aPourNom>
         <aPourAge>36</aPourAge>
         <aPourSpecialite>Chirurgien</aPourSpecialite>
+        <aPourExperience>3</aPourExperience>
+        <apourAdresse>Chicago</apourAdresse>
+        <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
     </owl:NamedIndividual>
     
 
@@ -1006,9 +991,12 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Sandra_Martinez,_PharmD">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Pharmacien"/>
+        <apourAdresse>New York</apourAdresse>
         <aPourAge>33</aPourAge>
         <aPourSpecialite>Pharmacien</aPourSpecialite>
         <aPourNom>Sandra Martinez</aPourNom>
+        <aPourExperience>10</aPourExperience>
+        <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
     </owl:NamedIndividual>
     
 
@@ -1018,8 +1006,11 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Susan_Adams,_MD">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Psychiatre"/>
         <aPourSpecialite>Psychiatre</aPourSpecialite>
+        <aPourExperience>16</aPourExperience>
+        <apourAdresse>Tunis</apourAdresse>
         <aPourNom>Susan Adams</aPourNom>
         <aPourAge>35</aPourAge>
+        <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
     </owl:NamedIndividual>
     
 
@@ -1031,6 +1022,9 @@
         <aPourSpecialite>Chirurgien</aPourSpecialite>
         <aPourAge>42</aPourAge>
         <aPourNom>Emily Anderson</aPourNom>
+        <aPourExperience>5</aPourExperience>
+        <apourAdresse>Tunis</apourAdresse>
+        <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
     </owl:NamedIndividual>
     
 
@@ -1055,11 +1049,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Ibuprofen">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Anti-inflammatoire"/>
-        <aAvecDosage>400mg to 800mg every 6 to 8 hours</aAvecDosage>
-        <aDesInstructions>Take with a full glass of water. Do not exceed recommended dosage.</aDesInstructions>
-        <aDesEffetsSecondaires>stomach pain, heartburn,</aDesEffetsSecondaires>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
     </owl:NamedIndividual>
     
 
@@ -1068,6 +1057,10 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Patient"/>
+        <aPourNom>John Smith</aPourNom>
+        <aPourAge>18</aPourAge>
+        <apourAdresse>Tunis</apourAdresse>
+        <aPourDateDeNaissance>09/09/2005</aPourDateDeNaissance>
     </owl:NamedIndividual>
     
 
@@ -1086,6 +1079,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Mary_Johnson">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Patient"/>
+        <aPourAge>24</aPourAge>
+        <apourAdresse>Sfax</apourAdresse>
+        <aPourDateDeNaissance>09/08/1999</aPourDateDeNaissance>
     </owl:NamedIndividual>
     
 
@@ -1110,9 +1106,14 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Nurse_Jessica_Wilson,_RN">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Infirmier"/>
+        <aPourExperience>10</aPourExperience>
         <aPourAge>27</aPourAge>
+        <apourAdresse>Sfax</apourAdresse>
         <aPourNom>Jessica Wilson</aPourNom>
         <aPourSpecialite>Infirmier</aPourSpecialite>
+        <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Emily_Miller,_MD"/>
+        <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Michael_Brown,_MD"/>
+        <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
     </owl:NamedIndividual>
     
 
@@ -1121,11 +1122,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Prozac">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Antidépresseu"/>
-        <aDesEffetsSecondaires>nausea, insomnia,</aDesEffetsSecondaires>
-        <aDesInstructions>Take with or without food. Follow doctor&apos;s instructions.</aDesInstructions>
-        <aAvecDosage>20mg to 80mg per day</aAvecDosage>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
     </owl:NamedIndividual>
     
 
@@ -1158,11 +1154,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamin_C">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamine"/>
-        <aDesInstructions>400 IU to 800 IU per day</aDesInstructions>
-        <aDesInstructions>Take with water and food for better absorption.</aDesInstructions>
-        <aDesEffetsSecondaires>Nothing.</aDesEffetsSecondaires>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
     </owl:NamedIndividual>
     
 
@@ -1171,11 +1162,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamin_D">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamine"/>
-        <aDesInstructions>Take with a meal to enhance absorption.</aDesInstructions>
-        <aDesEffetsSecondaires>Nothing.</aDesEffetsSecondaires>
-        <aAvecDosage>400 IU to 800 IU per day</aAvecDosage>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
     </owl:NamedIndividual>
     
 
@@ -1192,11 +1178,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Zoloft">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Antidépresseu"/>
-        <aDesEffetsSecondaires>dizziness, nausea</aDesEffetsSecondaires>
-        <aAvecDosage>50mg to 200mg per day</aAvecDosage>
-        <aDesInstructions>Take Zoloft with or without food, usually once daily in the morning.</aDesInstructions>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
