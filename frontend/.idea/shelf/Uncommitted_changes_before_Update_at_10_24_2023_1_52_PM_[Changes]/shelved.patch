@@ -1,0 +1,100 @@
+Index: app/providers.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>'use client';\r\n\r\nimport * as React from 'react';\r\nimport { NextUIProvider } from '@nextui-org/system';\r\nimport { ThemeProvider as NextThemesProvider } from 'next-themes';\r\nimport { ThemeProviderProps } from 'next-themes/dist/types';\r\nimport {\r\n  QueryClient,\r\n  QueryClientProvider,\r\n  useQuery\r\n} from '@tanstack/react-query';\r\nimport { ReactQueryDevtools } from '@tanstack/react-query-devtools';\r\n\r\nexport interface ProvidersProps {\r\n  children: React.ReactNode;\r\n  themeProps?: ThemeProviderProps;\r\n}\r\n\r\nconst queryClient = new QueryClient();\r\n\r\nexport function Providers({ children, themeProps }: ProvidersProps) {\r\n  return (\r\n    <NextUIProvider>\r\n      <QueryClientProvider client={queryClient}>\r\n        <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>\r\n        <ReactQueryDevtools initialIsOpen={false} />\r\n      </QueryClientProvider>\r\n    </NextUIProvider>\r\n  );\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/providers.tsx b/app/providers.tsx
+--- a/app/providers.tsx	(revision a1fb53e00c302169628f8094695de5172d38615a)
++++ b/app/providers.tsx	(date 1698149219981)
+@@ -10,6 +10,7 @@
+   useQuery
+ } from '@tanstack/react-query';
+ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
++import { SessionProvider } from 'next-auth/react';
+ 
+ export interface ProvidersProps {
+   children: React.ReactNode;
+@@ -21,10 +22,12 @@
+ export function Providers({ children, themeProps }: ProvidersProps) {
+   return (
+     <NextUIProvider>
+-      <QueryClientProvider client={queryClient}>
+-        <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
+-        <ReactQueryDevtools initialIsOpen={false} />
+-      </QueryClientProvider>
++      <SessionProvider>
++        <QueryClientProvider client={queryClient}>
++          <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
++          <ReactQueryDevtools initialIsOpen={false} />
++        </QueryClientProvider>
++      </SessionProvider>
+     </NextUIProvider>
+   );
+ }
+Index: types/next-auth.d.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import NextAuth, { DefaultSession } from 'next-auth';\r\nimport { JWT } from 'next-auth/jwt';\r\ninterface AuthUser {\r\n  id: string;\r\n  role: string;\r\n  accessToken?: string;\r\n  email: string;\r\n  username: string;\r\n}\r\n\r\ndeclare module 'next-auth' {\r\n  interface Session {\r\n    user: AuthUser & DefaultSession['user'];\r\n    accessToken: string; // THE FUCK ?\r\n  }\r\n}\r\n\r\ndeclare module 'next-auth/jwt' {\r\n  /** Returned by the `jwt` callback and `getToken`, when using JWT sessions */\r\n  interface JWT {\r\n    /** OpenID ID Token */\r\n    user: AuthUser;\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/types/next-auth.d.ts b/types/next-auth.d.ts
+--- a/types/next-auth.d.ts	(revision a1fb53e00c302169628f8094695de5172d38615a)
++++ b/types/next-auth.d.ts	(date 1698150227160)
+@@ -20,5 +20,7 @@
+   interface JWT {
+     /** OpenID ID Token */
+     user: AuthUser;
++    provider: string;
++    id_token: string;
+   }
+ }
+Index: .env
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.env b/.env
+new file mode 100644
+--- /dev/null	(date 1698150495153)
++++ b/.env	(date 1698150495153)
+@@ -0,0 +1,4 @@
++KEYCLOAK_URL=https://keycloak.mkadmi.tech/auth
++KEYCLOAK_REALM=master
++KEYCLOAK_CLIENT_ID=nest-api
++KEYCLOAK_CLIENT_SECRET=R59s4jf2laeYwjNvhk1UkucQMdhnnxej
+Index: app/api/auth/[...nextauth]/route.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/api/auth/[...nextauth]/route.ts b/app/api/auth/[...nextauth]/route.ts
+new file mode 100644
+--- /dev/null	(date 1698150558772)
++++ b/app/api/auth/[...nextauth]/route.ts	(date 1698150558772)
+@@ -0,0 +1,23 @@
++import NextAuth, { NextAuthOptions } from 'next-auth';
++import { Provider } from 'next-auth/providers';
++import KeycloakProvider from 'next-auth/providers/keycloak';
++
++const KEYCLOAK_CLIENT_ID = process.env.KEYCLOAK_CLIENT_ID!;
++const KEYCLOAK_CLIENT_SECRET = process.env.KEYCLOAK_CLIENT_SECRET!;
++const KEYCLOAK_URL = process.env.KEYCLOAK_URL!;
++const KEYCLOAK_REALM = process.env.KEYCLOAK_REALM!;
++
++const KEYCLOAK_ISSUER = `${KEYCLOAK_URL}/realms/${KEYCLOAK_REALM}`;
++const keycloakConfig = {
++  clientId: KEYCLOAK_CLIENT_ID,
++  clientSecret: KEYCLOAK_CLIENT_SECRET,
++  issuer: KEYCLOAK_ISSUER
++} as const;
++
++const providers: Provider[] = [KeycloakProvider(keycloakConfig)];
++
++const authOptions: NextAuthOptions = { providers };
++
++const handler = NextAuth(authOptions);
++
++export { handler as GET, handler as POST };

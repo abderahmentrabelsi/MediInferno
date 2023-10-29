@@ -1,0 +1,273 @@
+Index: components/navbar/staticNavbarFragment.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>'use client';\r\n\r\nimport React from 'react';\r\nimport {\r\n  NavbarItem,\r\n  Button,\r\n  DropdownItem,\r\n  DropdownTrigger,\r\n  Dropdown,\r\n  DropdownMenu\r\n} from '@nextui-org/react';\r\nimport { ChevronDown } from '@nextui-org/shared-icons';\r\nimport clsx from 'clsx';\r\nimport NextLink from 'next/link';\r\nimport { Link } from '@nextui-org/link';\r\n\r\nconst areas = [\r\n  {\r\n    name: 'Seller Area',\r\n    uri: '/offer',\r\n    children: [\r\n      { label: 'Home', path: '/' },\r\n      { label: 'Join Us', path: '/' }\r\n    ]\r\n  },\r\n  {\r\n    name: 'Customer Area',\r\n    uri: '/customer',\r\n    children: [\r\n      { label: 'Home', path: '/' },\r\n      { label: 'Orders', path: '/orders', absolute: true },\r\n      { label: 'Your Deliveries', path: '/showDeliveries', absolute: true },\r\n      { label: 'Market', path: '/products', absolute: true },\r\n      { label: 'Tickets', path: '/ticket', absolute: true }\r\n    ]\r\n  },\r\n  {\r\n    name: 'Offers',\r\n    uri: '/offers',\r\n    children: [{ label: 'List', path: '/' }]\r\n  }\r\n];\r\n\r\nexport const StaticNavbar = () => {\r\n  return (\r\n    <>\r\n      {areas.map((area) => (\r\n        <Dropdown placement=\"bottom-start\" key={`${area.name}-dropdown-key`}>\r\n          <NavbarItem>\r\n            <DropdownTrigger>\r\n              <Button\r\n                className=\"p-0 bg-transparent data-[hover=true]:bg-transparent\"\r\n                endContent={<ChevronDown fill=\"currentColor\" size={16} />}\r\n                radius=\"sm\"\r\n                variant=\"light\"\r\n              >\r\n                {area.name}\r\n              </Button>\r\n            </DropdownTrigger>\r\n          </NavbarItem>\r\n          <DropdownMenu>\r\n            {area.children.map((child) => (\r\n              <DropdownItem key={child.label}>\r\n                <Link\r\n                  color=\"foreground\"\r\n                  href={`${child.absolute ? '' : area.uri}${child.path}`}\r\n                >\r\n                  {child.label}\r\n                </Link>\r\n              </DropdownItem>\r\n            ))}\r\n          </DropdownMenu>\r\n        </Dropdown>\r\n      ))}\r\n    </>\r\n  );\r\n};\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/components/navbar/staticNavbarFragment.tsx b/components/navbar/staticNavbarFragment.tsx
+--- a/components/navbar/staticNavbarFragment.tsx	(revision 7a1622b53e13ed2a7ff8084cdef37a89ceb64bc5)
++++ b/components/navbar/staticNavbarFragment.tsx	(date 1698326821854)
+@@ -31,7 +31,7 @@
+       { label: 'Orders', path: '/orders', absolute: true },
+       { label: 'Your Deliveries', path: '/showDeliveries', absolute: true },
+       { label: 'Market', path: '/products', absolute: true },
+-      { label: 'Tickets', path: '/ticket', absolute: true }
++      { label: 'Tickets', path: '/tickets', absolute: true }
+     ]
+   },
+   {
+Index: .env
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>KEYCLOAK_URL=https://keycloak.mkadmi.tech/auth\r\nKEYCLOAK_REALM=master\r\nKEYCLOAK_CLIENT_ID=nest-api\r\nKEYCLOAK_CLIENT_SECRET=R59s4jf2laeYwjNvhk1UkucQMdhnnxej\r\nNEXT_PUBLIC_NEST_API_URL=http://localhost:8081\r\nNEXT_PUBLIC_TICKETS_API_URL=http://localhost:8089\r\nNEXT_PUBLIC_CART_API_URL=http://localhost:8086\r\nNEXTAUTH_URL=http://localhost:3000\r\nNEXTAUTH_SECRET=secret\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.env b/.env
+--- a/.env	(revision 7a1622b53e13ed2a7ff8084cdef37a89ceb64bc5)
++++ b/.env	(date 1698327283547)
+@@ -2,8 +2,8 @@
+ KEYCLOAK_REALM=master
+ KEYCLOAK_CLIENT_ID=nest-api
+ KEYCLOAK_CLIENT_SECRET=R59s4jf2laeYwjNvhk1UkucQMdhnnxej
+-NEXT_PUBLIC_NEST_API_URL=http://localhost:8081
+-NEXT_PUBLIC_TICKETS_API_URL=http://localhost:8089
++NEXT_PUBLIC_NEST_API_URL=http://localhost:8081/API
++NEXT_PUBLIC_TICKETS_API_URL=http://localhost:8081/TICKETS
+ NEXT_PUBLIC_CART_API_URL=http://localhost:8086
+ NEXTAUTH_URL=http://localhost:3000
+ NEXTAUTH_SECRET=secret
+Index: ../docker-compose.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>version: \"3.9\"\r\nservices:\r\n  # eureka-server:\r\n  #   container_name: eureka-server\r\n  #   hostname: eureka-server\r\n  #   build:\r\n  #     context: ./eurekaserver\r\n  #   ports:\r\n  #     - \"8761:8761\"\r\n  #   healthcheck:\r\n  #     test: [\"CMD\", \"curl\", \"-f\", \"http://localhost:8761/actuator/health\"]\r\n  #     interval: 2s\r\n  #     timeout: 3s\r\n  #     retries: 30\r\n\r\n  # apigateway:\r\n  #   container_name: apigateway\r\n  #   hostname: apigateway\r\n  #   build:\r\n  #     context: ./apigateway\r\n  #   ports:\r\n  #     - \"8081:8081\"\r\n  #   environment:\r\n  #     - EUREKA_SERVICE_URL=http://eureka-server:8761/eureka\r\n  #   depends_on:\r\n  #     eureka-server:\r\n  #       condition: service_healthy\r\n\r\n  # db-tickets:\r\n  #   container_name: db-tickets\r\n  #   hostname: db-tickets\r\n  #   image: mysql/mysql-server:latest\r\n  #   environment:\r\n  #     - MYSQL_ROOT_PASSWORD=root\r\n  #     - MYSQL_ROOT_HOST=%\r\n  #   command: --default-authentication-plugin=mysql_native_password\r\n  #   ports:\r\n  #     - \"3308:3306\"\r\n  #   healthcheck:\r\n  #     test: [\"CMD\", \"mysqladmin\" ,\"ping\", \"-h\", \"localhost\", \"-uroot\", \"-proot\"]\r\n  #     interval: 2s\r\n  #     timeout: 3s\r\n  #     retries: 30\r\n\r\n  # ms-tickets:\r\n  #   container_name: ms-tickets\r\n  #   hostname: ms-tickets\r\n  #   build:\r\n  #     context: ./ms-tickets\r\n  #   ports:\r\n  #     - \"8089:8089\"\r\n  #   environment:\r\n  #     - EUREKA_SERVICE_URL=http://eureka-server:8761/eureka\r\n  #     - TICKETS_MYSQL_URL=jdbc:mysql://db-tickets:3306/tickets?createDatabaseIfNotExist=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC\r\n  #     - TICKETS_MYSQL_USER=root\r\n  #     - TICKETS_MYSQL_PASSWORD=root\r\n  #   depends_on:\r\n  #     eureka-server:\r\n  #       condition: service_healthy\r\n  #     db-tickets:\r\n  #       condition: service_healthy\r\n  # ms-market:\r\n  #   container_name: ms-market\r\n  #   hostname: ms-market\r\n  #   build:\r\n  #     context: ./Market_MS\r\n  #   ports:\r\n  #     - \"8082:8082\"\r\n  #   environment:\r\n  #     - EUREKA_SERVICE_URL=http://eureka-server:8761/eureka\r\n  #     - TICKETS_MYSQL_URL=jdbc:mysql://db-tickets:3306/tickets?createDatabaseIfNotExist=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC\r\n  #     - TICKETS_MYSQL_USER=root\r\n  #     - TICKETS_MYSQL_PASSWORD=root\r\n  #   depends_on:\r\n  #     eureka-server:\r\n  #       condition: service_healthy\r\n  #     db-tickets:\r\n  #       condition: service_healthy\r\n\r\n  # nodejs-app:\r\n  #   container_name: nodejs-app\r\n  #   build:\r\n  #     context: ./stripe-ms\r\n  #     dockerfile: Dockerfile\r\n  #   ports:\r\n  #     - \"4000:4000\"\r\n  #   depends_on:\r\n  #     eureka-server:\r\n  #       condition: service_healthy\r\n\r\n  # db-nest:\r\n  #   hostname: db-nest\r\n  #   image: bitnami/mongodb:latest\r\n  #   restart: always\r\n  #   environment:\r\n  #     - MONGODB_USERNAME=nest\r\n  #     - MONGODB_PASSWORD=nest\r\n  #     - MONGODB_DATABASE=nest\r\n  #     - MONGODB_ROOT_PASSWORD=nest\r\n  #   ports:\r\n  #     - \"27019:27017\"\r\n  #   healthcheck:\r\n  #     test: [\"CMD\",\"mongosh\", \"--eval\", \"db.adminCommand('ping')\"]\r\n  #     interval: 3s\r\n  #     timeout: 5s\r\n  #     retries: 30\r\n  #     start_period: 5s\r\n\r\n  # ms-nest:\r\n  #   container_name: sale-safari-api\r\n  #   hostname: sale-safari-api\r\n  #   build:\r\n  #     context: ./sale-safari-api\r\n  #   ports:\r\n  #     - \"4747:4747\"\r\n  #   environment:\r\n  #     - EUREKA_HOST=eureka-server\r\n  #     - MONGO_URI=mongodb://root:nest@db-nest:27017/nest?authSource=admin\r\n  #     - KEYCLOAK_AUTH_SERVER_URL=https://keycloak.mkadmi.tech/auth\r\n  #     - KEYCLOAK_REALM=master\r\n  #     - KEYCLOAK_CLIENT_ID=nest-api\r\n  #     - KEYCLOAK_CLIENT_SECRET=R59s4jf2laeYwjNvhk1UkucQMdhnnxej\r\n  #   depends_on:\r\n  #     eureka-server:\r\n  #       condition: service_healthy\r\n  #     db-nest:\r\n  #       condition: service_healthy\r\n\r\n  frontend:\r\n    container_name: frontend\r\n    hostname: frontend\r\n    build:\r\n      context: ./frontend\r\n    ports:\r\n      - \"3000:3000\"\r\n    environment:\r\n      - NEXTAUTH_SECRET=useJDBCCompliantTimezoneShift\r\n      - NEXTAUTH_URL=http://localhost:3000/api/auth\r\n      - KEYCLOAK_URL=https://keycloak.mkadmi.tech/auth\r\n      - KEYCLOAK_REALM=master\r\n      - KEYCLOAK_CLIENT_ID=nest-api\r\n      - KEYCLOAK_CLIENT_SECRET=R59s4jf2laeYwjNvhk1UkucQMdhnnxej\r\n      - NEXT_PUBLIC_NEST_API_URL=http://apigateway/API/\r\n      - NEXT_PUBLIC_TICKETS_API_URL=http://apigateway/TICKETS/\r\n      - NEXT_PUBLIC_CART_API_URL=http://apigateway/CARTMS/\r\n      - NEXT_PUBLIC_DELIVERY_API_URL=http://apigateway/MSDELIVERY/\r\n\r\n  # ms-cart:\r\n  #   container_name: Cart-MS\r\n  #   build:\r\n  #     context: ./Cart-MS\r\n  #   ports:\r\n  #     - \"8086:8086\"\r\n  #   environment:\r\n  #     - EUREKA_SERVICE_URL= http://eureka-server:8761/eureka\r\n  #     - SPRING_PROFILES_ACTIVE= dev\r\n  #     - SPRING_DATASOURCE_URL= jdbc:h2:mem:cartdb\r\n  #   depends_on:\r\n  #     eureka-server:\r\n  #       condition: service_started\r\n\r\n  ms-delivery:\r\n    container_name: Delivery-MS\r\n    build:\r\n      context: ./Delivery_MS\r\n    ports:\r\n      - \"8088:8088\"\r\n    environment:\r\n      - EUREKA_SERVICE_URL= http://eureka-server:8761/eureka\r\n      - SPRING_PROFILES_ACTIVE= dev\r\n      - SPRING_DATASOURCE_URL= jdbc:h2:file:./saleSAFARI/Delivery_MS/src/main/java/com/example/delivery_ms/DataBase/deliverydb\r\n    depends_on:\r\n      eureka-server:\r\n        condition: service_started\r\n\r\n  # -----------------------------------------\r\n  # Eureka:\r\n  #   container_name: eureka\r\n  #   hostname: serviceregistry\r\n  #   ports:\r\n  #     - \"8761:8761\"\r\n  #   image: \"steeltoeoss/eureka-server\"\r\n  #   environment:\r\n  #     - spring.datasource.url=jdbc:mysql://root:@db-mysql:3306/markett?createDatabaseIfNotExist=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC\r\n  #     - eureka.client.serviceUrl.defaultZone=http://serviceregistry:8761/eureka/\r\n\r\n  # db-mysql:\r\n  #   image: \"mysql:5.6\"\r\n  #   hostname: db-mysql\r\n  #   container_name: db-mysqll\r\n  #   environment:\r\n  #     - MYSQL_ALLOW_EMPTY_PASSWORD=true\r\n  #   ports:\r\n  #     - \"3307:3306\"\r\n  #   restart: unless-stopped\r\n  #   healthcheck:\r\n  #     test: [\"CMD\", \"mysqladmin\" ,\"ping\", \"-h\", \"localhost\"]\r\n  #     timeout: 20s\r\n  #     retries: 10\r\n\r\n  # Market:\r\n  #   container_name: market\r\n  #   hostname: market\r\n  #   image: \"marketms\"\r\n  #   build: Market_MS\r\n  #   ports:\r\n  #     - \"8082:8082\"\r\n  #   environment:\r\n  #     - eureka.client.serviceUrl.defaultZone=http://serviceregistry:8761/eureka/\r\n  #     - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://serviceregistry:8761/eureka/\r\n  #     - spring.datasource.url=jdbc:mysql://root:@db-mysql:3306/markett?createDatabaseIfNotExist=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC\r\n  #     - SPRING_DATASOURCE_USERNAME=root\r\n  #     - SPRING_DATASOURCE_PASSWORD=\r\n  #   depends_on:\r\n  #     Eureka:\r\n  #       condition: service_started\r\n  #     db-mysql:\r\n  #       condition: service_healthy\r\n\r\n  # candidats:\r\n  #   container_name: candidats\r\n  #   hostname: candidats\r\n  #   image: \"dockerms\"\r\n  #   build: .\r\n  #   ports:\r\n  #     - \"9000:9000\"\r\n  #   environment:\r\n  #     - eureka.client.serviceUrl.defaultZone=http://serviceregistry:8761/eureka/\r\n  #     - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://serviceregistry:8761/eureka/\r\n  #     - spring.datasource.url=jdbc:mysql://root:@db-mysql:3306/markett?createDatabaseIfNotExist=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC\r\n  #     - SPRING_DATASOURCE_USERNAME=root\r\n  #     - SPRING_DATASOURCE_PASSWORD=\r\n  #   depends_on:\r\n  #     Eureka:\r\n  #       condition: service_started\r\n  #     db-mysql:\r\n  #       condition: service_healthy\r\n\r\n  # mongo_db:\r\n  #   container_name: db_container\r\n  #   image: mongo:latest\r\n  #   restart: always\r\n  #   ports:\r\n  #     - \"27017:27017\"\r\n  #   volumes:\r\n  #     - mongo_db:/data/db\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../docker-compose.yml b/../docker-compose.yml
+--- a/../docker-compose.yml	(revision 7a1622b53e13ed2a7ff8084cdef37a89ceb64bc5)
++++ b/../docker-compose.yml	(date 1698327101333)
+@@ -1,64 +1,65 @@
+ version: "3.9"
+ services:
+-  # eureka-server:
+-  #   container_name: eureka-server
+-  #   hostname: eureka-server
+-  #   build:
+-  #     context: ./eurekaserver
+-  #   ports:
+-  #     - "8761:8761"
+-  #   healthcheck:
+-  #     test: ["CMD", "curl", "-f", "http://localhost:8761/actuator/health"]
+-  #     interval: 2s
+-  #     timeout: 3s
+-  #     retries: 30
++  eureka-server:
++    container_name: eureka-server
++    hostname: eureka-server
++    build:
++      context: ./eurekaserver
++    ports:
++      - "8761:8761"
++    healthcheck:
++      test: ["CMD", "curl", "-f", "http://localhost:8761/actuator/health"]
++      interval: 2s
++      timeout: 3s
++      retries: 30
+ 
+-  # apigateway:
+-  #   container_name: apigateway
+-  #   hostname: apigateway
+-  #   build:
+-  #     context: ./apigateway
+-  #   ports:
+-  #     - "8081:8081"
+-  #   environment:
+-  #     - EUREKA_SERVICE_URL=http://eureka-server:8761/eureka
+-  #   depends_on:
+-  #     eureka-server:
+-  #       condition: service_healthy
++  apigateway:
++    container_name: apigateway
++    hostname: apigateway
++    build:
++      context: ./apigateway
++    ports:
++      - "8081:8081"
++    environment:
++      - EUREKA_SERVICE_URL=http://eureka-server:8761/eureka
++    depends_on:
++      eureka-server:
++        condition: service_healthy
+ 
+-  # db-tickets:
+-  #   container_name: db-tickets
+-  #   hostname: db-tickets
+-  #   image: mysql/mysql-server:latest
+-  #   environment:
+-  #     - MYSQL_ROOT_PASSWORD=root
+-  #     - MYSQL_ROOT_HOST=%
+-  #   command: --default-authentication-plugin=mysql_native_password
+-  #   ports:
+-  #     - "3308:3306"
+-  #   healthcheck:
+-  #     test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "-uroot", "-proot"]
+-  #     interval: 2s
+-  #     timeout: 3s
+-  #     retries: 30
++  db-tickets:
++    container_name: db-tickets
++    hostname: db-tickets
++    image: mysql/mysql-server:latest
++    environment:
++      - MYSQL_ROOT_PASSWORD=root
++      - MYSQL_ROOT_HOST=%
++    command: --default-authentication-plugin=mysql_native_password
++    ports:
++      - "3308:3306"
++    healthcheck:
++      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "-uroot", "-proot"]
++      interval: 2s
++      timeout: 3s
++      retries: 30
+ 
+-  # ms-tickets:
+-  #   container_name: ms-tickets
+-  #   hostname: ms-tickets
+-  #   build:
+-  #     context: ./ms-tickets
+-  #   ports:
+-  #     - "8089:8089"
+-  #   environment:
+-  #     - EUREKA_SERVICE_URL=http://eureka-server:8761/eureka
+-  #     - TICKETS_MYSQL_URL=jdbc:mysql://db-tickets:3306/tickets?createDatabaseIfNotExist=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+-  #     - TICKETS_MYSQL_USER=root
+-  #     - TICKETS_MYSQL_PASSWORD=root
+-  #   depends_on:
+-  #     eureka-server:
+-  #       condition: service_healthy
+-  #     db-tickets:
+-  #       condition: service_healthy
++  ms-tickets:
++    container_name: ms-tickets
++    hostname: ms-tickets
++    build:
++      context: ./ms-tickets
++    ports:
++      - "8089:8089"
++    environment:
++      - EUREKA_SERVICE_URL=http://eureka-server:8761/eureka
++      - TICKETS_MYSQL_URL=jdbc:mysql://db-tickets:3306/tickets?createDatabaseIfNotExist=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
++      - TICKETS_MYSQL_USER=root
++      - TICKETS_MYSQL_PASSWORD=root
++    depends_on:
++      eureka-server:
++        condition: service_healthy
++      db-tickets:
++        condition: service_healthy
++
+   # ms-market:
+   #   container_name: ms-market
+   #   hostname: ms-market
+@@ -126,24 +127,24 @@
+   #     db-nest:
+   #       condition: service_healthy
+ 
+-  frontend:
+-    container_name: frontend
+-    hostname: frontend
+-    build:
+-      context: ./frontend
+-    ports:
+-      - "3000:3000"
+-    environment:
+-      - NEXTAUTH_SECRET=useJDBCCompliantTimezoneShift
+-      - NEXTAUTH_URL=http://localhost:3000/api/auth
+-      - KEYCLOAK_URL=https://keycloak.mkadmi.tech/auth
+-      - KEYCLOAK_REALM=master
+-      - KEYCLOAK_CLIENT_ID=nest-api
+-      - KEYCLOAK_CLIENT_SECRET=R59s4jf2laeYwjNvhk1UkucQMdhnnxej
+-      - NEXT_PUBLIC_NEST_API_URL=http://apigateway/API/
+-      - NEXT_PUBLIC_TICKETS_API_URL=http://apigateway/TICKETS/
+-      - NEXT_PUBLIC_CART_API_URL=http://apigateway/CARTMS/
+-      - NEXT_PUBLIC_DELIVERY_API_URL=http://apigateway/MSDELIVERY/
++  # frontend:
++  #   container_name: frontend
++  #   hostname: frontend
++  #   build:
++  #     context: ./frontend
++  #   ports:
++  #     - "3000:3000"
++  #   environment:
++  #     - NEXTAUTH_SECRET=useJDBCCompliantTimezoneShift
++  #     - NEXTAUTH_URL=http://localhost:3000/api/auth
++  #     - KEYCLOAK_URL=https://keycloak.mkadmi.tech/auth
++  #     - KEYCLOAK_REALM=master
++  #     - KEYCLOAK_CLIENT_ID=nest-api
++  #     - KEYCLOAK_CLIENT_SECRET=R59s4jf2laeYwjNvhk1UkucQMdhnnxej
++  #     - NEXT_PUBLIC_NEST_API_URL=http://apigateway/API/
++  #     - NEXT_PUBLIC_TICKETS_API_URL=http://apigateway/TICKETS/
++  #     - NEXT_PUBLIC_CART_API_URL=http://apigateway/CARTMS/
++  #     - NEXT_PUBLIC_DELIVERY_API_URL=http://apigateway/MSDELIVERY/
+ 
+   # ms-cart:
+   #   container_name: Cart-MS
+@@ -159,19 +160,19 @@
+   #     eureka-server:
+   #       condition: service_started
+ 
+-  ms-delivery:
+-    container_name: Delivery-MS
+-    build:
+-      context: ./Delivery_MS
+-    ports:
+-      - "8088:8088"
+-    environment:
+-      - EUREKA_SERVICE_URL= http://eureka-server:8761/eureka
+-      - SPRING_PROFILES_ACTIVE= dev
+-      - SPRING_DATASOURCE_URL= jdbc:h2:file:./saleSAFARI/Delivery_MS/src/main/java/com/example/delivery_ms/DataBase/deliverydb
+-    depends_on:
+-      eureka-server:
+-        condition: service_started
++  # ms-delivery:
++  #   container_name: Delivery-MS
++  #   build:
++  #     context: ./Delivery_MS
++  #   ports:
++  #     - "8088:8088"
++  #   environment:
++  #     - EUREKA_SERVICE_URL= http://eureka-server:8761/eureka
++  #     - SPRING_PROFILES_ACTIVE= dev
++  #     - SPRING_DATASOURCE_URL= jdbc:h2:file:./saleSAFARI/Delivery_MS/src/main/java/com/example/delivery_ms/DataBase/deliverydb
++  #   depends_on:
++  #     eureka-server:
++  #       condition: service_started
+ 
+   # -----------------------------------------
+   # Eureka:
+Index: ../apigateway/src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>server.port=8081\r\nspring.application.name=gateway\r\n\r\nspring.cloud.gateway.discovery.locator.enabled=true\r\neureka.client.register-with-eureka=true\r\neureka.client.fetch-registry=true\r\neureka.client.serviceUrl.defaultZone=${EUREKA_SERVICE_URL:http://localhost:8761/eureka}\r\n\r\nspring.security.oauth2.client.registration.keycloak.client-id=nest-api\r\nspring.security.oauth2.client.registration.keycloak.client-secret=R59s4jf2laeYwjNvhk1UkucQMdhnnxej\r\nspring.security.oauth2.client.provider.keycloak.issuer-uri=https://keycloak.mkadmi.tech/auth/realms/master\r\nspring.security.oauth2.resourceserver.jwt.jwk-set-uri=https://keycloak.mkadmi.tech/auth/realms/master/protocol/openid-connect/certs\r\nkeycloak.jwk-set-uri=https://keycloak.mkadmi.tech/auth/realms/master/protocol/openid-connect/certs\r\n\r\nspring.main.allow-bean-definition-overriding=true\r\n\r\nlogging.level.org.springframework.security=DEBUG\r\n\r\nspring.cloud.gateway.default-filters[0]=DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin\r\nspring.cloud.gateway.globalcors.corsConfigurations[/**].allowedOrigins=http://127.0.0.1:3000,http://127.0.0.1:3001\r\nspring.cloud.gateway.globalcors.corsConfigurations[/**].allowedHeaders=*\r\nspring.cloud.gateway.globalcors.corsConfigurations[/**].allowedMethods[0]=GET\r\nspring.cloud.gateway.globalcors.corsConfigurations[/**].allowedMethods[1]=POST\r\nspring.cloud.gateway.globalcors.corsConfigurations[/**].allowedMethods[2]=DELETE\r\nspring.cloud.gateway.globalcors.corsConfigurations[/**].allowedMethods[3]=PUT\r\nspring.cloud.gateway.globalcors.corsConfigurations[/**].allowedMethods[4]=OPTIONS\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../apigateway/src/main/resources/application.properties b/../apigateway/src/main/resources/application.properties
+--- a/../apigateway/src/main/resources/application.properties	(revision 7a1622b53e13ed2a7ff8084cdef37a89ceb64bc5)
++++ b/../apigateway/src/main/resources/application.properties	(date 1698326904711)
+@@ -16,11 +16,6 @@
+ 
+ logging.level.org.springframework.security=DEBUG
+ 
+-spring.cloud.gateway.default-filters[0]=DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+-spring.cloud.gateway.globalcors.corsConfigurations[/**].allowedOrigins=http://127.0.0.1:3000,http://127.0.0.1:3001
+-spring.cloud.gateway.globalcors.corsConfigurations[/**].allowedHeaders=*
+-spring.cloud.gateway.globalcors.corsConfigurations[/**].allowedMethods[0]=GET
+-spring.cloud.gateway.globalcors.corsConfigurations[/**].allowedMethods[1]=POST
+-spring.cloud.gateway.globalcors.corsConfigurations[/**].allowedMethods[2]=DELETE
+-spring.cloud.gateway.globalcors.corsConfigurations[/**].allowedMethods[3]=PUT
+-spring.cloud.gateway.globalcors.corsConfigurations[/**].allowedMethods[4]=OPTIONS
++spring.cloud.gateway.globalcors.corsConfigurations.[/**].allowedOrigins=*
++spring.cloud.gateway.globalcors.corsConfigurations.[/**].allowedMethods=GET,POST,PUT,DELETE,OPTIONS
++spring.cloud.gateway.globalcors.corsConfigurations.[/**].allowedHeaders=*
