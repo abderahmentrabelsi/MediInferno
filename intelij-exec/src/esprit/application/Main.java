@@ -1,10 +1,11 @@
 package esprit.application;
+
 import esprit.tools.JenaEngine;
 import org.apache.jena.rdf.model.*;
+
 public class Main {
     /**
-     * @param args
-     * the command line arguments
+     * @param args the command line arguments
      */
     public static void main(String[] args) {
         String NS = "";
@@ -37,4 +38,5 @@ public class Main {
         } else {
             System.out.println("Error when reading model from ontology");
         }
-    }}
+    }
+}
