@@ -117,4 +117,8 @@ public class RDFService {
         return resultList;
     }
 
+    public <T> List<T> queryToList(String query, Class<T> type) {
+        var res = this.queryRDFJson(query);
+        return this.convertJsonToListOfType(res, type);
+    }
 }

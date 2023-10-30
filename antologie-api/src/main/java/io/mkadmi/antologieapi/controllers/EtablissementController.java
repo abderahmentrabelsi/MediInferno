@@ -1,22 +1,26 @@
 package io.mkadmi.antologieapi.controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import io.mkadmi.antologieapi.dto.EtablissementDeSanteDTO;
 import io.mkadmi.antologieapi.services.RDFService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 
-@Controller
+@RestController
 @RequestMapping("/etablissement")
 public class EtablissementController {
     @Autowired
     RDFService rdfService;
 
     @GetMapping("/list")
-    public ResponseEntity<JsonNode> listEtablissement() {
+    public ResponseEntity<List<EtablissementDeSanteDTO>> listEtablissement() {
         // SPARQL query
         String query =
                 "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n" +
@@ -31,7 +35,8 @@ public class EtablissementController {
                         "  ?etablissement_de_sante sante:apourTauxDeReduction ?tauxDeReduction." +
                         "}";
 
-        return ResponseEntity.ok(rdfService.queryRDFJson(query));
+        var etablissementList = rdfService.queryToList(query, EtablissementDeSanteDTO.class);
+        return ResponseEntity.ok(etablissementList);
     }
 
 }

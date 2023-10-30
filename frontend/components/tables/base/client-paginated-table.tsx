@@ -1,5 +1,3 @@
-'use client';
-
 import React, { ReactNode, useMemo, useState } from 'react';
 import {
   Table,
@@ -10,14 +8,11 @@ import {
   TableRow,
   Pagination,
   Skeleton,
-  Card
+  Card,
+  CardBody
 } from '@nextui-org/react';
 import { snakeCaseToHumanReadable } from '@utils/string-utils';
-import { CardBody } from '@nextui-org/card';
-import {
-  IdentifiableSchema,
-  PaginatedQuery
-} from '@/app/tickets/_api/ticketCustomSchemas';
+import { UseQueryResult } from '@tanstack/react-query';
 
 export interface RenderTableCellProps<
   T,
@@ -27,64 +22,39 @@ export interface RenderTableCellProps<
   item: Omit<T, K>;
 }
 
-interface PaginatedTableProps<
-  T extends IdentifiableSchema,
-  K extends string | number | symbol = never,
-  V extends Record<string, string> = Record<string, string>
+interface ClientPaginatedTableProps<
+  T extends Record<string, any>,
+  K extends string | number | symbol = never
 > {
-  useQuery: PaginatedQuery<T, V>;
+  useQuery: (val: any) => UseQueryResult<T[]>;
   RenderCell: React.FC<RenderTableCellProps<T, K>>;
   rowsPerPage?: number;
   actions?: (id: number) => ReactNode;
   excludeKeys?: Array<K>;
-  useQueryPathParams?: V;
 }
 
-const PaginatedTable = <
-  T extends IdentifiableSchema,
-  K extends keyof T = never,
-  V extends Record<string, string> = Record<string, string>
+const ClientPaginatedTable = <
+  T extends Record<string, any>,
+  K extends keyof T = never
 >({
   useQuery,
   RenderCell,
   rowsPerPage = 10,
   actions,
-  excludeKeys = [], // Default to an empty array
-  useQueryPathParams
-}: PaginatedTableProps<T, K, V>) => {
+  excludeKeys = []
+}: ClientPaginatedTableProps<T, K>) => {
   const [page, setPage] = useState(1);
-
-  const {
-    data: rawData,
-    isError,
-    error,
-    isLoading
-  } = useQuery({
-    queryParams: {
-      skip: (page - 1) * rowsPerPage,
-      limit: rowsPerPage
-    },
-    // @ts-ignore
-    pathParams: useQueryPathParams
-  });
+  const { data: rawData, isError, error, isLoading } = useQuery({});
 
   const data = useMemo(() => {
-    if (rawData && actions) {
-      return {
-        ...rawData,
-        // @ts-ignore <-- gadma
-        items: rawData.map((item: T) => ({
-          ...item,
-          actions: actions(item.id)
-        }))
-      };
-    } else {
-      return rawData;
-    }
-  }, [rawData, actions, excludeKeys, page]);
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+
+    return rawData?.slice(start, end) ?? [];
+  }, [rawData, page, rowsPerPage]);
 
   const columnKeys = useMemo(() => {
-    const keys = Object.keys(data?.items?.[0] ?? {}) as Array<keyof T>;
+    const keys = Object.keys(data?.[0] ?? {}) as Array<keyof T>;
     return keys.filter((key) => !excludeKeys.includes(key as K));
   }, [data, excludeKeys]);
 
@@ -96,7 +66,7 @@ const PaginatedTable = <
     return <div>Error: {error?.toString()}</div>;
   }
 
-  if (!data.items?.length || !columnKeys) {
+  if (!data.length || !columnKeys.length) {
     return (
       <Card>
         <CardBody>No Data</CardBody>
@@ -109,7 +79,7 @@ const PaginatedTable = <
       isHeaderSticky
       isStriped
       bottomContent={
-        data.total_pages > 0 ? (
+        rawData?.length > rowsPerPage ? (
           <div className="flex w-full justify-center">
             <Pagination
               isCompact
@@ -117,15 +87,12 @@ const PaginatedTable = <
               showShadow
               color="primary"
               page={page}
-              total={data.total_pages}
+              total={Math.ceil(rawData.length / rowsPerPage)}
               onChange={(newPage) => setPage(newPage)}
             />
           </div>
         ) : null
       }
-      classNames={{
-        table: 'min-h-[150px]'
-      }}
     >
       <TableHeader>
         {columnKeys.map((columnKey) => (
@@ -136,13 +103,13 @@ const PaginatedTable = <
       </TableHeader>
       <TableBody
         isLoading={isLoading}
-        items={data?.items}
+        items={data}
         loadingContent={<Skeleton className="w-full min-h-[250px]" />}
       >
         {(item: T) => (
           <TableRow key={`item-${item.id}`}>
             {columnKeys.map((columnKey) => (
-              <TableCell key={`${item.id}-${String(columnKey)}`}>
+              <TableCell key={`item-${item.id}-${String(columnKey)}`}>
                 <RenderCell
                   columnKey={columnKey as Exclude<keyof T, K>}
                   item={item as Omit<T, K>}
@@ -156,4 +123,4 @@ const PaginatedTable = <
   );
 };
 
-export default PaginatedTable;
+export default ClientPaginatedTable;

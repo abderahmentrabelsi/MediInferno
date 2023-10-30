@@ -1,0 +1,154 @@
+Index: intelij-exec/src/esprit/application/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package esprit.application;\r\nimport esprit.tools.JenaEngine;\r\nimport org.apache.jena.rdf.model.*;\r\npublic class Main {\r\n    /**\r\n     * @param args\r\n     * the command line arguments\r\n     */\r\n    public static void main(String[] args) {\r\n        String NS = \"\";\r\n// lire le model a partir d'une ontologie\r\n        Model model = JenaEngine.readModel(\"data/WebSemantique.rdf\");\r\n        if (model != null) {\r\n//lire le Namespace de l’ontologie\r\n            NS = model.getNsPrefixURI(\"\");\r\n// apply our rules on the owlInferencedModel\r\n            Model inferedModel =\r\n\r\n                    JenaEngine.readInferencedModelFromRuleFile(model, \"data/rules.txt\");\r\n// query on the model after inference\r\n            System.out.println(JenaEngine.executeQueryFile(inferedModel,\r\n\r\n                    \"data/queryProfessionnels.txt\"));\r\n\r\n            System.out.println(JenaEngine.executeQueryFile(inferedModel,\r\n\r\n                    \"data/queryProduit.txt\"));\r\n\r\n            System.out.println(JenaEngine.executeQueryFile(inferedModel,\r\n\r\n                    \"data/queryMaladie.txt\"));\r\n\r\n            System.out.println(JenaEngine.executeQueryFile(inferedModel,\r\n\r\n                    \"data/queryPatient.txt\"));\r\n\r\n        } else {\r\n            System.out.println(\"Error when reading model from ontology\");\r\n        }\r\n    }}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/intelij-exec/src/esprit/application/Main.java b/intelij-exec/src/esprit/application/Main.java
+--- a/intelij-exec/src/esprit/application/Main.java	(revision a00a6706fa2fcbab0300ebf30cf4139c58260f02)
++++ b/intelij-exec/src/esprit/application/Main.java	(date 1698611150272)
+@@ -1,10 +1,11 @@
+ package esprit.application;
++
+ import esprit.tools.JenaEngine;
+ import org.apache.jena.rdf.model.*;
++
+ public class Main {
+     /**
+-     * @param args
+-     * the command line arguments
++     * @param args the command line arguments
+      */
+     public static void main(String[] args) {
+         String NS = "";
+@@ -37,4 +38,5 @@
+         } else {
+             System.out.println("Error when reading model from ontology");
+         }
+-    }}
++    }
++}
+Index: .idea/deployment.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/deployment.xml b/.idea/deployment.xml
+new file mode 100644
+--- /dev/null	(date 1698611150303)
++++ b/.idea/deployment.xml	(date 1698611150303)
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
++    <serverData>
++      <paths name="Playground">
++        <serverdata>
++          <mappings>
++            <mapping local="$PROJECT_DIR$" web="/" />
++          </mappings>
++        </serverdata>
++      </paths>
++    </serverData>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"1.8\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision a00a6706fa2fcbab0300ebf30cf4139c58260f02)
++++ b/.idea/misc.xml	(date 1698611150333)
+@@ -3,4 +3,7 @@
+   <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
++  <component name="ProjectType">
++    <option name="id" value="jpab" />
++  </component>
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"96e0dbfc-bc1d-45b5-ad91-9b95fe9dd9ab\" name=\"Changes\" comment=\"update\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/intelij-exec/data/WebSemantique.rdf\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/intelij-exec/data/WebSemantique.rdf\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/intelij-exec/data/queryPatient.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/intelij-exec/data/queryPatient.txt\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitToolBoxStore\">\r\n    <option name=\"projectConfigVersion\" value=\"5\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 0\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2XRokI4eXGC6Hn2aBo8FtnDUMG6\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"96e0dbfc-bc1d-45b5-ad91-9b95fe9dd9ab\" name=\"Changes\" comment=\"\" />\r\n      <created>1698601400420</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1698601400420</updated>\r\n      <workItem from=\"1698601402338\" duration=\"1566000\" />\r\n      <workItem from=\"1698606637399\" duration=\"1457000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"update\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1698606586255</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1698606586255</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"update\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"update\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision a00a6706fa2fcbab0300ebf30cf4139c58260f02)
++++ b/.idea/workspace.xml	(date 1698611161550)
+@@ -5,9 +5,12 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="96e0dbfc-bc1d-45b5-ad91-9b95fe9dd9ab" name="Changes" comment="update">
++      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/intelij-exec/data/WebSemantique.rdf" beforeDir="false" afterPath="$PROJECT_DIR$/intelij-exec/data/WebSemantique.rdf" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/intelij-exec/data/queryPatient.txt" beforeDir="false" afterPath="$PROJECT_DIR$/intelij-exec/data/queryPatient.txt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/intelij-exec/src/esprit/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/intelij-exec/src/esprit/application/Main.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -20,6 +23,9 @@
+   <component name="GitToolBoxStore">
+     <option name="projectConfigVersion" value="5" />
+   </component>
++  <component name="MarkdownSettingsMigration">
++    <option name="stateVersion" value="1" />
++  </component>
+   <component name="ProjectColorInfo">{
+   &quot;customColor&quot;: &quot;&quot;,
+   &quot;associatedIndex&quot;: 0
+@@ -36,10 +42,16 @@
+     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
++    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/Wahib/Desktop/MediInferno&quot;,
+     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+ }</component>
+@@ -53,6 +65,7 @@
+       <updated>1698601400420</updated>
+       <workItem from="1698601402338" duration="1566000" />
+       <workItem from="1698606637399" duration="1457000" />
++      <workItem from="1698610006458" duration="1144000" />
+     </task>
+     <task id="LOCAL-00001" summary="update">
+       <option name="closed" value="true" />
+Index: .idea/jpa-buddy.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/jpa-buddy.xml b/.idea/jpa-buddy.xml
+new file mode 100644
+--- /dev/null	(date 1698611150289)
++++ b/.idea/jpa-buddy.xml	(date 1698611150289)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="JpaBuddyIdeaProjectConfig">
++    <option name="renamerInitialized" value="true" />
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/.gitignore b/.gitignore
+new file mode 100644

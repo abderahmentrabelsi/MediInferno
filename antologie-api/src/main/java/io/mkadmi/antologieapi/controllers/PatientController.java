@@ -39,8 +39,7 @@ public class PatientController {
                         "  OPTIONAL { ?patient sante:aUnNuméroDeDossierMédical ?dossierMédical. }\n" +
                         "}";
 
-        var result = rdfService.queryRDFJson(query);
-        List<PatientResponseDTO> patientList = rdfService.convertJsonToListOfType(result, PatientResponseDTO.class);
+        List<PatientResponseDTO> patientList = rdfService.queryToList(query, PatientResponseDTO.class);
         return ResponseEntity.ok(patientList);
     }
 }

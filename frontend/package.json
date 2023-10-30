@@ -8,17 +8,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "gen-client": "npx openapi-codegen gen dark"
+    "gen-client": "npx openapi-codegen gen antologie"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.15",
-    "@nextui-org/card": "^2.0.21",
-    "@nextui-org/chip": "^2.0.21",
-    "@nextui-org/code": "^2.0.19",
-    "@nextui-org/link": "^2.0.22",
-    "@nextui-org/navbar": "^2.0.22",
     "@nextui-org/react": "^2.1.13",
     "@radix-ui/react-dialog": "^1.0.5",
     "@react-aria/ssr": "^3.6.0",
@@ -34,7 +29,7 @@
     "intl-messageformat": "^10.1.0",
     "lodash": "^4.17.21",
     "lucide-react": "^0.288.0",
-    "next": "13.4.19",
+    "next": "^14.0.0",
     "next-themes": "^0.2.1",
     "postcss": "8.4.24",
     "react": "18.2.0",
