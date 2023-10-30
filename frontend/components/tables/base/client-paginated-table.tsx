@@ -9,10 +9,12 @@ import {
   Pagination,
   Skeleton,
   Card,
-  CardBody
+  CardBody,
+  Input
 } from '@nextui-org/react';
-import { snakeCaseToHumanReadable } from '@utils/string-utils';
+import { randomString, snakeCaseToHumanReadable } from '@utils/string-utils';
 import { UseQueryResult } from '@tanstack/react-query';
+import { SearchIcon } from '@components/icons';
 
 export interface RenderTableCellProps<
   T,
@@ -40,11 +42,21 @@ const ClientPaginatedTable = <
   useQuery,
   RenderCell,
   rowsPerPage = 10,
-  actions,
   excludeKeys = []
 }: ClientPaginatedTableProps<T, K>) => {
   const [page, setPage] = useState(1);
-  const { data: rawData, isError, error, isLoading } = useQuery({});
+  const [searchValue, setSearchValue] = React.useState('');
+
+  const {
+    data: rawData,
+    isError,
+    error,
+    isLoading
+  } = useQuery({
+    queryParams: {
+      q: searchValue
+    }
+  });
 
   const data = useMemo(() => {
     const start = (page - 1) * rowsPerPage;
@@ -58,68 +70,74 @@ const ClientPaginatedTable = <
     return keys.filter((key) => !excludeKeys.includes(key as K));
   }, [data, excludeKeys]);
 
-  if (!data || isLoading) {
-    return <Skeleton className="w-full min-h-[250px] rounded-xl my-2" />;
-  }
-
   if (isError) {
     return <div>Error: {error?.toString()}</div>;
   }
 
-  if (!data.length || !columnKeys.length) {
-    return (
-      <Card>
-        <CardBody>No Data</CardBody>
-      </Card>
-    );
-  }
-
   return (
-    <Table
-      isHeaderSticky
-      isStriped
-      bottomContent={
-        rawData?.length > rowsPerPage ? (
-          <div className="flex w-full justify-center">
-            <Pagination
-              isCompact
-              showControls
-              showShadow
-              color="primary"
-              page={page}
-              total={Math.ceil(rawData.length / rowsPerPage)}
-              onChange={(newPage) => setPage(newPage)}
-            />
-          </div>
-        ) : null
-      }
-    >
-      <TableHeader>
-        {columnKeys.map((columnKey) => (
-          <TableColumn key={columnKey as string} className="text-xs uppercase">
-            {snakeCaseToHumanReadable(String(columnKey)).toUpperCase()}
-          </TableColumn>
-        ))}
-      </TableHeader>
-      <TableBody
-        isLoading={isLoading}
-        items={data}
-        loadingContent={<Skeleton className="w-full min-h-[250px]" />}
-      >
-        {(item: T) => (
-          <TableRow key={`item-${item.id}`}>
-            {columnKeys.map((columnKey) => (
-              <TableCell key={`item-${item.id}-${String(columnKey)}`}>
-                <RenderCell
-                  columnKey={columnKey as Exclude<keyof T, K>}
-                  item={item as Omit<T, K>}
+    <div className="flex flex-col gap-3">
+      <Input
+        type="text"
+        placeholder="Your search query here..."
+        value={searchValue}
+        onValueChange={setSearchValue}
+        startContent={
+          <SearchIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+        }
+      />
+      {rawData ? (
+        <Table
+          isHeaderSticky
+          isStriped
+          bottomContent={
+            rawData?.length > rowsPerPage ? (
+              <div className="flex w-full justify-center">
+                <Pagination
+                  isCompact
+                  showControls
+                  showShadow
+                  color="primary"
+                  page={page}
+                  total={Math.ceil(rawData.length / rowsPerPage)}
+                  onChange={(newPage) => setPage(newPage)}
                 />
-              </TableCell>
+              </div>
+            ) : null
+          }
+        >
+          <TableHeader>
+            {columnKeys.map((columnKey) => (
+              <TableColumn
+                key={columnKey as string}
+                className="text-xs uppercase"
+              >
+                {snakeCaseToHumanReadable(String(columnKey)).toUpperCase()}
+              </TableColumn>
             ))}
-          </TableRow>
-        )}
-      </TableBody>
-    </Table>
+          </TableHeader>
+          <TableBody
+            isLoading={isLoading}
+            items={data}
+            loadingContent={<Skeleton className="w-full min-h-[250px]" />}
+          >
+            {(item: T) => (
+              <TableRow key={`item-${randomString()}`}>
+                {columnKeys.map((columnKey) => (
+                  <TableCell key={`item-${item.id}-${String(columnKey)}`}>
+                    <RenderCell
+                      columnKey={columnKey as Exclude<keyof T, K>}
+                      item={item as Omit<T, K>}
+                    />
+                  </TableCell>
+                ))}
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
+      ) : (
+        <Skeleton className="min-h-[250px] rounded-2xl" />
+      )}
+    </div>
   );
 };
 

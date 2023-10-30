@@ -7,7 +7,7 @@ export default function PatientsLayout({
 }) {
   return (
     <>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-6">
         <h1 className={title()}>Etablissements</h1>
         {children}
       </div>
