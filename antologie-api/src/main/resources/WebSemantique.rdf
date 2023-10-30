@@ -258,6 +258,12 @@
         <rdfs:range rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Patient"/>
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Patient_Prop"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie"/>
+            </owl:Restriction>
+        </rdfs:domain>
     </owl:ObjectProperty>
     
 
@@ -544,14 +550,7 @@
 
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie">
-        <rdfs:domain>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie"/>
-            </owl:Restriction>
-        </rdfs:domain>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie"/>
     
 
 
@@ -657,14 +656,14 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Produit_Pharmaceutique"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aDesMédicamentsPrescrits"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Patient"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aUnTraitement"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aUnTraitement"/>
-                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aDesMédicamentsPrescrits"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Patient"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -762,13 +761,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Respiratoire"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Cardiovasculaire"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Cardiovasculaire"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Respiratoire"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -987,6 +986,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Pharmacie"/>
+        <aPourNom>ABC Pharmacy</aPourNom>
     </owl:NamedIndividual>
     
 
@@ -998,6 +998,7 @@
         <aAvecDosage>250mg to 500mg every 8 hours</aAvecDosage>
         <aDesInstructions>Take on an empty stomach with a full glass of water.</aDesInstructions>
         <aDesEffetsSecondaires>nausea, diarrhea</aDesEffetsSecondaires>
+        <aPourNom>Amoxicilin</aPourNom>
         <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
         <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
     </owl:NamedIndividual>
@@ -1034,6 +1035,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Anti-inflammatoire"/>
         <aDesInstructions>Take with food. Do not exceed recommended dosage.</aDesInstructions>
         <aAvecDosage>200mg once daily</aAvecDosage>
+        <aPourNom>Celebrex</aPourNom>
         <aDesEffetsSecondaires>nausea, headache,</aDesEffetsSecondaires>
         <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
         <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
@@ -1045,6 +1047,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Pharmacie"/>
+        <aPourNom>CD Pharmacy</aPourNom>
     </owl:NamedIndividual>
     
 
@@ -1164,6 +1167,7 @@
         <aAvecDosage>400mg to 800mg every 6 to 8 hours</aAvecDosage>
         <aDesInstructions>Take with a full glass of water. Do not exceed recommended dosage.</aDesInstructions>
         <aDesEffetsSecondaires>stomach pain, heartburn,</aDesEffetsSecondaires>
+        <aPourNom>Ibuprofen</aPourNom>
         <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
         <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
     </owl:NamedIndividual>
@@ -1260,6 +1264,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Prozac">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Antidépresseu"/>
+        <aPourNom>Prozac</aPourNom>
         <aDesEffetsSecondaires>nausea, insomnia,</aDesEffetsSecondaires>
         <aDesInstructions>Take with or without food. Follow doctor&apos;s instructions.</aDesInstructions>
         <aAvecDosage>20mg to 80mg per day</aAvecDosage>
@@ -1315,6 +1320,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamine"/>
         <aAvecDosage>500mg to 1000mg per day</aAvecDosage>
         <aDesInstructions>Take with water and food for better absorption.</aDesInstructions>
+        <aPourNom>Vitamin_C</aPourNom>
         <aDesEffetsSecondaires>Nothing.</aDesEffetsSecondaires>
         <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
         <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
@@ -1328,6 +1334,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamine"/>
         <aDesInstructions>Take with a meal to enhance absorption.</aDesInstructions>
         <aDesEffetsSecondaires>Nothing.</aDesEffetsSecondaires>
+        <aPourNom>Vitamin_D</aPourNom>
         <aAvecDosage>400 IU to 800 IU per day</aAvecDosage>
         <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
         <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
@@ -1347,6 +1354,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Zoloft">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Antidépresseu"/>
+        <aPourNom>Zoloft</aPourNom>
         <aDesEffetsSecondaires>dizziness, nausea,</aDesEffetsSecondaires>
         <aAvecDosage>50mg to 200mg per day</aAvecDosage>
         <aDesInstructions>Take Zoloft with or without food, usually once daily in the morning.</aDesInstructions>
