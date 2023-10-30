@@ -52,6 +52,16 @@ public class SpecialiteController {
         return ResponseEntity.ok(rdfService.queryRDFJson(query));
     }
 
-
+    @GetMapping("/stats")
+    public ResponseEntity<JsonNode> getSpecialiteStats() {
+        String query = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n" +
+                "SELECT (COUNT(?specialite) as ?totalSpecialites) (MIN(?aPourDesSpecialiste) as ?minSpecialistes) (MAX(?aPourDesSpecialiste) as ?maxSpecialistes)\n" +
+                "WHERE {\n" +
+                "  ?specialite rdf:type/rdfs:subClassOf* sante:specialite.\n" +
+                "  ?specialite sante:aPourDesSpecialiste ?aPourDesSpecialiste.\n" +
+                "}";
+        return ResponseEntity.ok(rdfService.queryRDFJson(query));
+    }
 
 }
