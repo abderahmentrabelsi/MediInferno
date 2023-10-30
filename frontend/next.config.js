@@ -10,10 +10,7 @@ const nextConfig = {
   // }
   swcMinify: true,
   reactStrictMode: true,
-  experimental: {
-    scrollRestoration: true,
-    nextScriptWorkers: true
-  },
+  experimental: {},
   output: 'standalone'
 };
 

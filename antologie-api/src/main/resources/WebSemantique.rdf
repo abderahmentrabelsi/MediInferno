@@ -752,14 +752,14 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Produit_Pharmaceutique"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aDesMédicamentsPrescrits"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Patient"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aUnTraitement"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aUnTraitement"/>
-                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aDesMédicamentsPrescrits"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Patient"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1213,8 +1213,8 @@
         <aAvecDosage>250mg to 500mg every 8 hours</aAvecDosage>
         <aDesInstructions>Take on an empty stomach with a full glass of water.</aDesInstructions>
         <aDesEffetsSecondaires>nausea, diarrhea</aDesEffetsSecondaires>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
+        <aPourNom>Amoxicilin</aPourNom>
+        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hela_rokbi"/>
     </owl:NamedIndividual>
     
 
@@ -1269,9 +1269,9 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Anti-inflammatoire"/>
         <aDesInstructions>Take with food. Do not exceed recommended dosage.</aDesInstructions>
         <aAvecDosage>200mg once daily</aAvecDosage>
+        <aPourNom>Celebrex</aPourNom>
         <aDesEffetsSecondaires>nausea, headache,</aDesEffetsSecondaires>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
+        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hela_rokbi"/>
     </owl:NamedIndividual>
     
 
@@ -1381,6 +1381,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hela_rokbi">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Pharmacie"/>
         <aPourNomEtab>Hela Rokbi Pharmacie</aPourNomEtab>
+        <aPourNom>Hela Rokbi Pharmacy</aPourNom>
         <aDesServiceDurg>false</aDesServiceDurg>
         <aPourSpecialite>Pharmacie</aPourSpecialite>
         <apourTauxDeReduction>10.00</apourTauxDeReduction>
@@ -1440,8 +1441,8 @@
         <aAvecDosage>400mg to 800mg every 6 to 8 hours</aAvecDosage>
         <aDesInstructions>Take with a full glass of water. Do not exceed recommended dosage.</aDesInstructions>
         <aDesEffetsSecondaires>stomach pain, heartburn,</aDesEffetsSecondaires>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
+        <aPourNom>Ibuprofen</aPourNom>
+        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hela_rokbi"/>
     </owl:NamedIndividual>
     
 
@@ -1565,11 +1566,11 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Prozac">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Antidépresseu"/>
+        <aPourNom>Prozac</aPourNom>
         <aDesEffetsSecondaires>nausea, insomnia,</aDesEffetsSecondaires>
         <aDesInstructions>Take with or without food. Follow doctor&apos;s instructions.</aDesInstructions>
         <aAvecDosage>20mg to 80mg per day</aAvecDosage>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
+        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hela_rokbi"/>
     </owl:NamedIndividual>
     
 
@@ -1629,10 +1630,10 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamin_C">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamine"/>
         <aAvecDosage>500mg to 1000mg per day</aAvecDosage>
+        <aPourNom>Vitamin C</aPourNom>
         <aDesInstructions>Take with water and food for better absorption.</aDesInstructions>
         <aDesEffetsSecondaires>Nothing.</aDesEffetsSecondaires>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
+        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hela_rokbi"/>
     </owl:NamedIndividual>
     
 
@@ -1642,10 +1643,10 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamin_D">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamine"/>
         <aDesInstructions>Take with a meal to enhance absorption.</aDesInstructions>
+        <aPourNom>Vitamin D</aPourNom>
         <aDesEffetsSecondaires>Nothing.</aDesEffetsSecondaires>
         <aAvecDosage>400 IU to 800 IU per day</aAvecDosage>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
+        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hela_rokbi"/>
     </owl:NamedIndividual>
     
 
@@ -1654,11 +1655,11 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Zoloft">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Antidépresseu"/>
+        <aPourNom>Zoloft</aPourNom>
         <aDesEffetsSecondaires>dizziness, nausea,</aDesEffetsSecondaires>
         <aAvecDosage>50mg to 200mg per day</aAvecDosage>
         <aDesInstructions>Take Zoloft with or without food, usually once daily in the morning.</aDesInstructions>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
-        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
+        <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hela_rokbi"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
