@@ -17,14 +17,21 @@ public class EtablissementController {
 
     @GetMapping("/list")
     public ResponseEntity<JsonNode> listEtablissement() {
-
-        //language=SPARQL
+        // SPARQL query
         String query =
-                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-                        "SELECT ?etablissement WHERE {" +
-                        "  ?etablissement rdf:type <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Etablissement_de_sante> ." +
+                "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n" +
+                        "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                        "SELECT ?aPourNomEtab ?aDesServiceDurg ?telephone ?capacite ?tauxDeReduction " +
+                        "WHERE {" +
+                        "  ?etablissement_de_sante rdf:type sante:Etablissement_de_sante." +
+                        "  ?etablissement_de_sante sante:aPourNomEtab ?aPourNomEtab." +
+                        "  ?etablissement_de_sante sante:aDesServiceDurg ?aDesServiceDurg." +
+                        "  ?etablissement_de_sante sante:aPourNuméroDeTéléphone ?telephone." +
+                        "  ?etablissement_de_sante sante:aUneCapacite ?capacite." +
+                        "  ?etablissement_de_sante sante:apourTauxDeReduction ?tauxDeReduction." +
                         "}";
 
         return ResponseEntity.ok(rdfService.queryRDFJson(query));
     }
+
 }
