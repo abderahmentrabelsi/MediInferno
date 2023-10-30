@@ -24,7 +24,7 @@ public class TraitementController {
                 "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" +
                 "SELECT ?aPourNomTrait ?aPourMateriels ?aPourDureeTrait ?aPourMedicaments ?aPourUnProfDeSante\n" +
                 "WHERE {\n" +
-                "  ?traitement rdf:type sante:Traitement.\n" +
+                "  ?traitement rdf:type/rdfs:subClassOf* sante:Traitement.\n" +
                 "  ?traitement sante:aPourNomTrait ?aPourNomTrait.\n" +
                 "  ?traitement sante:aPourMateriels ?aPourMateriels.\n" +
                 "  ?traitement sante:aPourDureeTrait ?aPourDureeTrait.\n" +
