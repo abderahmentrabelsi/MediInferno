@@ -788,13 +788,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Cardiovasculaire"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Respiratoire"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Respiratoire"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Cardiovasculaire"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -837,15 +837,15 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Sante"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aConsulté"/>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Professionnel_de_la_sante"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aConsulté"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Professionnel_de_la_sante"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1001,6 +1001,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#0"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#129849 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#129849"/>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#184095 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#184095">
@@ -1045,6 +1057,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#70649872 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#70649872"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#74827947 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#74827947"/>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#8475960 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#8475960"/>
@@ -1054,6 +1078,12 @@
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#928467 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#928467"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#93847 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#93847"/>
     
 
 
@@ -1102,6 +1132,20 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Respiratoire"/>
         <aPourSymptomes>Difficulté a parler , Essoufflement</aPourSymptomes>
         <aUnTraitement rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Celebrex"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Aziza_othmana -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Aziza_othmana">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hôpital"/>
+        <aPourSpecialite>hospital for burn victims</aPourSpecialite>
+        <apourTauxDeReduction>16.00</apourTauxDeReduction>
+        <aPourNomEtab>Aziza Othmana</aPourNomEtab>
+        <aDesServiceDurg>false</aDesServiceDurg>
+        <aUneCapacite rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#129849"/>
+        <aPourNuméroDeTéléphone rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#70649872"/>
     </owl:NamedIndividual>
     
 
@@ -1225,6 +1269,20 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hela_rokbi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hela_rokbi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Pharmacie"/>
+        <aPourNomEtab>Hela Rokbi Pharmacie</aPourNomEtab>
+        <aDesServiceDurg>false</aDesServiceDurg>
+        <aPourSpecialite>Pharmacie</aPourSpecialite>
+        <apourTauxDeReduction>10.00</apourTauxDeReduction>
+        <aUneCapacite rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#0"/>
+        <aPourNuméroDeTéléphone rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#70649872"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hypertensive_Heart_Disease -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hypertensive_Heart_Disease">
@@ -1233,6 +1291,20 @@
         <aPourSymptomes>Essoufflement , Fatigue</aPourSymptomes>
         <aUnTraitement rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Amoxicillin"/>
         <aUnTraitement rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Celebrex"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Ibn_Nafis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Ibn_Nafis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Clinique"/>
+        <aPourNomEtab>Ibn Nafis</aPourNomEtab>
+        <aDesServiceDurg>false</aDesServiceDurg>
+        <apourTauxDeReduction>3.00</apourTauxDeReduction>
+        <aPourSpecialite>hospital for burn victims</aPourSpecialite>
+        <aPourNuméroDeTéléphone rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#74827947"/>
+        <aUneCapacite rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#93847"/>
     </owl:NamedIndividual>
     
 
@@ -1377,6 +1449,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Etablissement_de_sante"/>
         <apourTauxDeReduction>0.02</apourTauxDeReduction>
         <aPourSpecialite>psychiatric hospital</aPourSpecialite>
+        <aDesServiceDurg>true</aDesServiceDurg>
         <aPourNomEtab>Riverside Hospital</aPourNomEtab>
         <aPourNuméroDeTéléphone rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#55555555"/>
         <aUneCapacite rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#8475960"/>
