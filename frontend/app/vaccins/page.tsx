@@ -11,7 +11,7 @@ const ProductsPage = () => {
 
   return (
     <div>
-      <h1 style={{ textAlign: 'center', fontSize: '2rem' }}>Diseases List</h1>
+      <h1 style={{ textAlign: 'center', fontSize: '2rem' }}>Vaccinations List</h1>
       <br></br>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
         < VaccinsComponent/>
