@@ -3,6 +3,21 @@
  *
  * @version v0
  */
+export type PatientStatsDTO = {
+  /**
+   * @format int32
+   */
+  totalPatients?: number;
+  /**
+   * @format int32
+   */
+  minAge?: number;
+  /**
+   * @format int32
+   */
+  maxAge?: number;
+};
+
 export type PatientResponseDTO = {
   patient?: string;
   nom?: string;
@@ -15,11 +30,47 @@ export type PatientResponseDTO = {
   aConsulté?: string;
   aMaladie?: string;
   dossierMédical?: string;
-  aconsulté?: string;
   amaladie?: string;
+  aconsulté?: string;
+};
+
+export type EtablissementStatsDTO = {
+  /**
+   * @format int64
+   */
+  totalEtablissements?: number;
+  /**
+   * @format int32
+   */
+  maxCapacity?: number;
+  /**
+   * @format int32
+   */
+  minCapacity?: number;
+};
+
+export type EtablissementReductionStatsDTO = {
+  /**
+   * @format int64
+   */
+  totalEtablissements?: number;
+  /**
+   * @format double
+   */
+  maxReduction?: number;
+  /**
+   * @format double
+   */
+  minReduction?: number;
+  /**
+   * @format double
+   */
+  avgReduction?: number;
 };
 
 export type EtablissementDeSanteDTO = {
+  aPourNomEtab?: string;
+  aDesServiceDurg?: string;
   telephone?: string;
   /**
    * @format int32
@@ -29,6 +80,4 @@ export type EtablissementDeSanteDTO = {
    * @format double
    */
   tauxDeReduction?: number;
-  adesServiceDurg?: string;
-  apourNomEtab?: string;
 };

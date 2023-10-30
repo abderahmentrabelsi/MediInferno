@@ -9,22 +9,76 @@ import type * as Fetcher from './apiFetcher';
 import { apiFetch } from './apiFetcher';
 import type * as Schemas from './apiSchemas';
 
+export type GetPatientStatsError = Fetcher.ErrorWrapper<undefined>;
+
+export type GetPatientStatsVariables = ApiContext['fetcherOptions'];
+
+export const fetchGetPatientStats = (
+  variables: GetPatientStatsVariables,
+  signal?: AbortSignal
+) =>
+  apiFetch<
+    Schemas.PatientStatsDTO,
+    GetPatientStatsError,
+    undefined,
+    {},
+    {},
+    {}
+  >({ url: '/patients/stats', method: 'get', ...variables, signal });
+
+export const useGetPatientStats = <TData = Schemas.PatientStatsDTO>(
+  variables: GetPatientStatsVariables,
+  options?: Omit<
+    reactQuery.UseQueryOptions<
+      Schemas.PatientStatsDTO,
+      GetPatientStatsError,
+      TData
+    >,
+    'queryKey' | 'queryFn' | 'initialData'
+  >
+) => {
+  const { fetcherOptions, queryOptions, queryKeyFn } = useApiContext(options);
+  return reactQuery.useQuery<
+    Schemas.PatientStatsDTO,
+    GetPatientStatsError,
+    TData
+  >({
+    queryKey: queryKeyFn({
+      path: '/patients/stats',
+      operationId: 'getPatientStats',
+      variables
+    }),
+    queryFn: ({ signal }) =>
+      fetchGetPatientStats({ ...fetcherOptions, ...variables }, signal),
+    ...options,
+    ...queryOptions
+  });
+};
+
+export type ListPatientsQueryParams = {
+  q?: string;
+};
+
 export type ListPatientsError = Fetcher.ErrorWrapper<undefined>;
 
 export type ListPatientsResponse = Schemas.PatientResponseDTO[];
 
-export type ListPatientsVariables = ApiContext['fetcherOptions'];
+export type ListPatientsVariables = {
+  queryParams?: ListPatientsQueryParams;
+} & ApiContext['fetcherOptions'];
 
 export const fetchListPatients = (
   variables: ListPatientsVariables,
   signal?: AbortSignal
 ) =>
-  apiFetch<ListPatientsResponse, ListPatientsError, undefined, {}, {}, {}>({
-    url: '/patients/list',
-    method: 'get',
-    ...variables,
-    signal
-  });
+  apiFetch<
+    ListPatientsResponse,
+    ListPatientsError,
+    undefined,
+    {},
+    ListPatientsQueryParams,
+    {}
+  >({ url: '/patients/list', method: 'get', ...variables, signal });
 
 export const useListPatients = <TData = ListPatientsResponse>(
   variables: ListPatientsVariables,
@@ -47,11 +101,121 @@ export const useListPatients = <TData = ListPatientsResponse>(
   });
 };
 
+export type GetEtablissementStatsError = Fetcher.ErrorWrapper<undefined>;
+
+export type GetEtablissementStatsVariables = ApiContext['fetcherOptions'];
+
+export const fetchGetEtablissementStats = (
+  variables: GetEtablissementStatsVariables,
+  signal?: AbortSignal
+) =>
+  apiFetch<
+    Schemas.EtablissementStatsDTO,
+    GetEtablissementStatsError,
+    undefined,
+    {},
+    {},
+    {}
+  >({ url: '/etablissement/stats', method: 'get', ...variables, signal });
+
+export const useGetEtablissementStats = <TData = Schemas.EtablissementStatsDTO>(
+  variables: GetEtablissementStatsVariables,
+  options?: Omit<
+    reactQuery.UseQueryOptions<
+      Schemas.EtablissementStatsDTO,
+      GetEtablissementStatsError,
+      TData
+    >,
+    'queryKey' | 'queryFn' | 'initialData'
+  >
+) => {
+  const { fetcherOptions, queryOptions, queryKeyFn } = useApiContext(options);
+  return reactQuery.useQuery<
+    Schemas.EtablissementStatsDTO,
+    GetEtablissementStatsError,
+    TData
+  >({
+    queryKey: queryKeyFn({
+      path: '/etablissement/stats',
+      operationId: 'getEtablissementStats',
+      variables
+    }),
+    queryFn: ({ signal }) =>
+      fetchGetEtablissementStats({ ...fetcherOptions, ...variables }, signal),
+    ...options,
+    ...queryOptions
+  });
+};
+
+export type GetEtablissementReductionStatsError =
+  Fetcher.ErrorWrapper<undefined>;
+
+export type GetEtablissementReductionStatsVariables =
+  ApiContext['fetcherOptions'];
+
+export const fetchGetEtablissementReductionStats = (
+  variables: GetEtablissementReductionStatsVariables,
+  signal?: AbortSignal
+) =>
+  apiFetch<
+    Schemas.EtablissementReductionStatsDTO,
+    GetEtablissementReductionStatsError,
+    undefined,
+    {},
+    {},
+    {}
+  >({
+    url: '/etablissement/reductionStats',
+    method: 'get',
+    ...variables,
+    signal
+  });
+
+export const useGetEtablissementReductionStats = <
+  TData = Schemas.EtablissementReductionStatsDTO
+>(
+  variables: GetEtablissementReductionStatsVariables,
+  options?: Omit<
+    reactQuery.UseQueryOptions<
+      Schemas.EtablissementReductionStatsDTO,
+      GetEtablissementReductionStatsError,
+      TData
+    >,
+    'queryKey' | 'queryFn' | 'initialData'
+  >
+) => {
+  const { fetcherOptions, queryOptions, queryKeyFn } = useApiContext(options);
+  return reactQuery.useQuery<
+    Schemas.EtablissementReductionStatsDTO,
+    GetEtablissementReductionStatsError,
+    TData
+  >({
+    queryKey: queryKeyFn({
+      path: '/etablissement/reductionStats',
+      operationId: 'getEtablissementReductionStats',
+      variables
+    }),
+    queryFn: ({ signal }) =>
+      fetchGetEtablissementReductionStats(
+        { ...fetcherOptions, ...variables },
+        signal
+      ),
+    ...options,
+    ...queryOptions
+  });
+};
+
+export type ListEtablissementQueryParams = {
+  q?: string;
+};
+
 export type ListEtablissementError = Fetcher.ErrorWrapper<undefined>;
 
 export type ListEtablissementResponse = Schemas.EtablissementDeSanteDTO[];
 
-export type ListEtablissementVariables = ApiContext['fetcherOptions'];
+export type ListEtablissementVariables = {
+  queryParams?: ListEtablissementQueryParams;
+} & ApiContext['fetcherOptions'];
 
 export const fetchListEtablissement = (
   variables: ListEtablissementVariables,
@@ -62,7 +226,7 @@ export const fetchListEtablissement = (
     ListEtablissementError,
     undefined,
     {},
-    {},
+    ListEtablissementQueryParams,
     {}
   >({ url: '/etablissement/list', method: 'get', ...variables, signal });
 
@@ -97,9 +261,24 @@ export const useListEtablissement = <TData = ListEtablissementResponse>(
 
 export type QueryOperation =
   | {
+      path: '/patients/stats';
+      operationId: 'getPatientStats';
+      variables: GetPatientStatsVariables;
+    }
+  | {
       path: '/patients/list';
       operationId: 'listPatients';
       variables: ListPatientsVariables;
+    }
+  | {
+      path: '/etablissement/stats';
+      operationId: 'getEtablissementStats';
+      variables: GetEtablissementStatsVariables;
+    }
+  | {
+      path: '/etablissement/reductionStats';
+      operationId: 'getEtablissementReductionStats';
+      variables: GetEtablissementReductionStatsVariables;
     }
   | {
       path: '/etablissement/list';
