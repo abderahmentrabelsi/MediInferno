@@ -3,10 +3,19 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, CardHeader, CardBody, Image, Button, Input } from "@nextui-org/react";
 import Swal from "sweetalert2";
+import { useQuery } from "@tanstack/react-query";
 
 const MedicalLaboComponent = () => {
   const [medicalLabos, setMedicalLabos] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const { data: searchMedicalLabo, error } = useQuery({
+    queryKey: ['medicalLabo', searchTerm],
+    queryFn: async () => {
+      return await fetch(
+        `http://localhost:8020/medicalLabo/getByName/${searchTerm}`
+      ).then((res) => res.json());
+    }
+  });
 
   useEffect(() => {
     axios.get("http://localhost:8020/medicalLabo/list")
@@ -39,11 +48,6 @@ const MedicalLaboComponent = () => {
     });
   };
 
-  const filteredMedicalLabos = medicalLabos.filter(
-    (medicalLabo) =>
-      medicalLabo.aPourNom.toLowerCase().includes(searchTerm.toLowerCase()) 
-  );
-
   const cardStyle = {
     display: "flex",
     flex: "1 1 20%",
@@ -57,6 +61,38 @@ const MedicalLaboComponent = () => {
     textAlign: "center",
   };
 
+  if(searchMedicalLabo && searchMedicalLabo.length > 0) {
+    return (
+      <div>
+      <Input
+        placeholder="Search..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        {searchMedicalLabo.map((medicalLabo) => (
+          <Card style={cardStyle} key={medicalLabo.id}>
+            <CardHeader>
+              <h3>{medicalLabo.aPourNom}</h3>
+            </CardHeader>
+            <CardBody>
+              <Image
+                src="images/medicalLabo.png"
+                width={200}
+                height={200}
+              />
+              <div style={productInfoStyle}>
+                <p><b>Equipments :</b> {medicalLabo.aEquipement}</p>
+              </div>
+              <br></br>
+              <Button onClick={() => showDetails(medicalLabo)}>Show Details</Button>
+            </CardBody>
+          </Card>
+        ))}
+      </div>
+    </div>
+    );
+    }
   return (
     <div>
       <Input
@@ -65,7 +101,7 @@ const MedicalLaboComponent = () => {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {filteredMedicalLabos.map((medicalLabo) => (
+        {medicalLabos.map((medicalLabo) => (
           <Card style={cardStyle} key={medicalLabo.id}>
             <CardHeader>
               <h3>{medicalLabo.aPourNom}</h3>

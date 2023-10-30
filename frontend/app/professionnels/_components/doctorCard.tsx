@@ -16,11 +16,6 @@ export default function DoctorCard({ doctors }: { doctors: Doctor[] }) {
       ).then((res) => res.json() as Promise<Doctor[]>);
     }
   });
-  const filteredDoctors =
-    doctors &&
-    doctors.filter((doctor) =>
-      doctor.nom.toLowerCase().includes(searchQuery.toLowerCase())
-    );
 
   if (searchDoctor && searchDoctor?.length > 0) {
     return (
