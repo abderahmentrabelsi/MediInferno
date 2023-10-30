@@ -293,6 +293,23 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourMedicaments -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourMedicaments">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Anti-inflammatoire"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Antibiotique"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Antidépresseu"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Produit_Pharmaceutique"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_Physique"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_Psychologique"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_physiotherapie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamine"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#traitement_props"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourMédecin -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourMédecin">
@@ -331,6 +348,25 @@
                 <owl:someValuesFrom rdf:resource="&xsd;string"/>
             </owl:Restriction>
         </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourUnProfDeSante -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourUnProfDeSante">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Chirurgien"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Infirmier"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Orthophoniste"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Pharmacien"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Professionnel_de_la_sante"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Psychiatre"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Radiologue"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_Physique"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_Psychologique"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_physiotherapie"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#traitement_props"/>
     </owl:ObjectProperty>
     
 
@@ -491,6 +527,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#traitement_props -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#traitement_props"/>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#travailleDans -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#travailleDans">
@@ -514,6 +556,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_data_props -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_data_props"/>
     
 
 
@@ -581,9 +629,27 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourDureeTrait -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourDureeTrait">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_data_props"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourExperience -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourExperience"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourMateriels -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourMateriels">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_data_props"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
     
 
 
@@ -615,6 +681,15 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Etablissement_de_sante"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hôpital"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Pharmacie"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourNomTrait -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourNomTrait">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_data_props"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -677,14 +752,14 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Produit_Pharmaceutique"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aUnTraitement"/>
-                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aDesMédicamentsPrescrits"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Patient"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aDesMédicamentsPrescrits"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Patient"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aUnTraitement"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -837,15 +912,15 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Sante"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aConsulté"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Professionnel_de_la_sante"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aConsulté"/>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Professionnel_de_la_sante"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -955,6 +1030,38 @@
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Sante -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Sante"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Sante"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_Physique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_Physique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_Psychologique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_Psychologique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_physiotherapie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_physiotherapie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement"/>
+    </owl:Class>
     
 
 
@@ -1295,6 +1402,23 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hypnose -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hypnose">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_Psychologique"/>
+        <aPourMateriels>sans</aPourMateriels>
+        <aPourNomTrait>Hypnose</aPourNomTrait>
+        <aPourDureeTrait>20jours</aPourDureeTrait>
+        <aPourUnProfDeSante rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Emily_Miller,_MD"/>
+        <aPourUnProfDeSante rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Michael_Brown,_MD"/>
+        <aPourUnProfDeSante rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Sandra_Martinez,_PharmD"/>
+        <aPourMedicaments rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Massage"/>
+        <aPourMedicaments rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamin_C"/>
+        <aPourMedicaments rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Zoloft"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Ibn_Nafis -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Ibn_Nafis">
@@ -1362,6 +1486,21 @@
         <aUnNuméroDeDossierMédical rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#184095"/>
         <aMaladie rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dangeureux"/>
         <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Michael_Brown,_MD"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Massage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Massage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_Physique"/>
+        <aPourDureeTrait>2heures</aPourDureeTrait>
+        <aPourMateriels>huile</aPourMateriels>
+        <aPourNomTrait>Massage Rooms</aPourNomTrait>
+        <aPourUnProfDeSante rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Michael_Brown,_MD"/>
+        <aPourUnProfDeSante rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Sandra_Martinez,_PharmD"/>
+        <aPourMedicaments rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamin_C"/>
+        <aPourMedicaments rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamin_D"/>
     </owl:NamedIndividual>
     
 
@@ -1461,6 +1600,20 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Slim">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Professionnel_de_la_sante"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Therapie_par_la_parole -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Therapie_par_la_parole">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_physiotherapie"/>
+        <aPourNomTrait>Parole Ther</aPourNomTrait>
+        <aPourMateriels>Sensocare</aPourMateriels>
+        <aPourDureeTrait>2ans</aPourDureeTrait>
+        <aPourUnProfDeSante rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Susan_Adams,_MD"/>
+        <aPourMedicaments rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamin_C"/>
+        <aPourMedicaments rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamin_D"/>
     </owl:NamedIndividual>
     
 
