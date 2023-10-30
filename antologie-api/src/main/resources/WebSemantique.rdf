@@ -6,6 +6,7 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY aDesServicesD "http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aDesServicesD&apos;" >
 ]>
 
 
@@ -14,7 +15,8 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:aDesServicesD="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aDesServicesD&apos;">
     <owl:Ontology rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont"/>
     
 
@@ -728,6 +730,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Etablissement_de_sante">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Sante"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#apourTauxDeReduction"/>
+                <owl:someValuesFrom rdf:resource="&xsd;float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -810,15 +818,15 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Sante"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aConsulté"/>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Professionnel_de_la_sante"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aConsulté"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Professionnel_de_la_sante"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -979,6 +987,30 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#184095">
         <aUnNuméroDeDossierMédical rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#20300 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#20300"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#55555555 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#55555555"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#8475960 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#8475960"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#98975800 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#98975800"/>
     
 
 
@@ -1192,9 +1224,14 @@
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Karen_Anderson,_Speech-Language_Pathologist -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Karen_Anderson,_Speech-Language_Pathologist">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Etablissement_de_sante"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Orthophoniste"/>
         <aPourNom>Karen Anderson</aPourNom>
         <aPourSpecialite>Orthophoniste</aPourSpecialite>
+        <apourAdresse xml:lang="fr">Sfax</apourAdresse>
+        <aUneCapacite rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#20300"/>
+        <aPourNuméroDeTéléphone rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#55555555"/>
+        <aDesServicesD:Urgence rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Oui"/>
     </owl:NamedIndividual>
     
 
@@ -1238,6 +1275,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Non -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Non"/>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Non-Dangeureux -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Non-Dangeureux"/>
@@ -1257,6 +1300,12 @@
         <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Michael_Brown,_MD"/>
         <aConsulté rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Oui -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Oui"/>
     
 
 
@@ -1293,7 +1342,15 @@
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Riverside_Regional_Medical_Center -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Riverside_Regional_Medical_Center">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Etablissement_de_sante"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hôpital"/>
+        <apourTauxDeReduction>0.02</apourTauxDeReduction>
+        <aPourNom>Riverside</aPourNom>
+        <apourAdresse xml:lang="fr">Italy</apourAdresse>
+        <aPourSpecialite>psychiatric hospital</aPourSpecialite>
+        <aPourNuméroDeTéléphone rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#55555555"/>
+        <aUneCapacite rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#8475960"/>
+        <aDesServicesD:Urgence rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Non"/>
     </owl:NamedIndividual>
     
 
@@ -1311,6 +1368,12 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Smith_Family_Practice">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Cabinet_médical"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Tunis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Tunis"/>
     
 
 
