@@ -37,6 +37,8 @@ const MaladiesComponent = () => {
                     <TableColumn>Maladie Name</TableColumn>
                     <TableColumn>Symptomes</TableColumn>
                     <TableColumn>Traitement</TableColumn>
+                    <TableColumn>Vaccin</TableColumn>
+
                 </TableHeader>
                 <TableBody>
                     {filteredMaladies.map((maladie, index) => (
@@ -44,6 +46,8 @@ const MaladiesComponent = () => {
                             <TableCell>{maladie.maladie}</TableCell>
                             <TableCell>{maladie.aPoursymptome}</TableCell>
                             <TableCell>{maladie.aTraitement}</TableCell>
+                            <TableCell>{maladie.aVaccin}</TableCell>
+
                         </TableRow>
                     ))}
                 </TableBody>
