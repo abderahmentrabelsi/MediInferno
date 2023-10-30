@@ -64,7 +64,10 @@ public class EtablissementController {
     public ResponseEntity<JsonNode> getEtablissementStats() {
         String query = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n" +
-                "SELECT (COUNT(?etablissement_de_sante) as ?totalEtablissements) (MAX(?capacite) as ?maxCapacity) (MIN(?capacite) as ?minCapacity)\n" +
+                "SELECT\n" +
+                "    (COUNT(?etablissement_de_sante) as ?totalEtablissements)\n" +
+                "    (MAX(?capacite) as ?maxCapacity)\n" +
+                "    (MIN(?capacite) as ?minCapacity)\n" +
                 "WHERE {\n" +
                 "  ?etablissement_de_sante rdf:type sante:Etablissement_de_sante.\n" +
                 "  ?etablissement_de_sante sante:aUneCapacite ?capacite.\n" +
@@ -73,6 +76,7 @@ public class EtablissementController {
         JsonNode stats = rdfService.queryRDFJson(query);
         return ResponseEntity.ok(stats);
     }
+
 
 
 }
