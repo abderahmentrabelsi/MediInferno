@@ -1,21 +1,28 @@
 package io.mkadmi.antologieapi.controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import io.mkadmi.antologieapi.dto.PatientResponseDTO;
 import io.mkadmi.antologieapi.services.RDFService;
+import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import java.util.List;
+
+@RestController
 @RequestMapping("/patients")
+@Api(value = "Patients Ontology API", tags = "Patients")
 public class PatientController {
     @Autowired
     RDFService rdfService;
 
     @GetMapping("/list")
-    public ResponseEntity<JsonNode> listPatients() {
+    public ResponseEntity<List<PatientResponseDTO>> listPatients() {
 
         //language=SPARQL
         String query =  "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
@@ -32,6 +39,8 @@ public class PatientController {
                         "  OPTIONAL { ?patient sante:aUnNuméroDeDossierMédical ?dossierMédical. }\n" +
                         "}";
 
-        return ResponseEntity.ok(rdfService.queryRDFJson(query));
+        var result = rdfService.queryRDFJson(query);
+        List<PatientResponseDTO> patientList = rdfService.convertJsonToListOfType(result, PatientResponseDTO.class);
+        return ResponseEntity.ok(patientList);
     }
 }
