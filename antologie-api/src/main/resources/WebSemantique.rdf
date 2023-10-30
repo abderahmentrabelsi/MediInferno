@@ -1494,6 +1494,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Coronary_Artery_Disease">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Cardiovasculaire"/>
+        <aPourNom>Coronary_Artery</aPourNom>
         <aPourSymptomes>Palpitations</aPourSymptomes>
         <aUnTraitement rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Amoxicillin"/>
     </owl:NamedIndividual>
@@ -1624,6 +1625,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hypertensive_Heart_Disease">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Cardiovasculaire"/>
+        <aPourNom>Hypertensive_Heart</aPourNom>
         <aPourSymptomes>Essoufflement , Fatigue</aPourSymptomes>
         <aUnTraitement rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Amoxicillin"/>
         <aUnTraitement rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Celebrex"/>
@@ -1878,7 +1880,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ROR">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vaccin_Virus"/>
-        <aPourAge>4_6_ans</aPourAge>
         <aDesEffetsSecondaires>rougeur , Douleur ,Fièvre</aDesEffetsSecondaires>
         <aPourInjection>sous-cutanées</aPourInjection>
         <aPourNom>ROR</aPourNom>
