@@ -42,7 +42,9 @@ export default function DoctorCard({ doctors }: { doctors: Doctor[] }) {
                   width="100%"
                   alt={item.nom}
                   className="w-full object-cover h-[140px]"
-                  // src={faker.image.avatarGitHub()}
+                  src={faker.image.urlLoremFlickr({
+                    category: 'doctors'
+                  })}
                 />
                 <DoctorDetails doctor={item} />
               </CardBody>
