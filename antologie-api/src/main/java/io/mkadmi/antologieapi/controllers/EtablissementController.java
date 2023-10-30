@@ -78,5 +78,25 @@ public class EtablissementController {
     }
 
 
+    @GetMapping("/reductionStats")
+    public ResponseEntity<JsonNode> getEtablissementReductionStats() {
+        String query = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n" +
+                "SELECT\n" +
+                "    (COUNT(?etablissement_de_sante) as ?totalEtablissements)\n" +
+                "    (MAX(?tauxDeReduction) as ?maxReduction)\n" +
+                "    (MIN(?tauxDeReduction) as ?minReduction)\n" +
+                "    (AVG(?tauxDeReduction) as ?avgReduction)\n" +
+                "WHERE {\n" +
+                "  ?etablissement_de_sante rdf:type sante:Etablissement_de_sante.\n" +
+                "  ?etablissement_de_sante sante:apourTauxDeReduction ?tauxDeReduction.\n" +
+                "}";
+
+        JsonNode reductionStats = rdfService.queryRDFJson(query);
+        return ResponseEntity.ok(reductionStats);
+    }
+
+
+
 
 }
