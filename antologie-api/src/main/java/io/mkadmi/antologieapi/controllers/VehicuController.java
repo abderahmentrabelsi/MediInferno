@@ -32,4 +32,18 @@ public class VehicuController {
         JsonNode results = rdfService.queryRDFJson(sparqlQuery);
         return ResponseEntity.ok(results);
     }
+
+    @GetMapping("/stats")
+    public ResponseEntity<JsonNode> getVehicleStats() {
+        String sparqlQuery = "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#> " +
+                "SELECT (COUNT(?vehicle) as ?totalVehicles) (MAX(?aPourNbrPlaces) as ?minPlaces) (MIN(?aPourNbrPlaces) as ?maxPlaces) (AVG(?aPourNbrPlaces) as ?avgPlaces) " +
+                "WHERE { " +
+                "  ?vehicle sante:aPourNbrPlaces ?aPourNbrPlaces. " +
+                "}";
+        JsonNode stats = rdfService.queryRDFJson(sparqlQuery);
+        return ResponseEntity.ok(stats);
+    }
+
+
+
 }
