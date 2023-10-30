@@ -21,7 +21,7 @@ public class TraitementController {
 
         // Updated SPARQL query for Traitement
         // PREFIX declarations remain the same
-        String query =  "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n" +
+        String query = "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n" +
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" +
                 "SELECT ?aPourNomTrait ?aPourMateriels ?aPourDureeTrait ?aPourMedicaments ?aPourUnProfDeSante\n" +
@@ -37,23 +37,24 @@ public class TraitementController {
         return ResponseEntity.ok(rdfService.queryRDFJson(query));
     }
 
-//    @GetMapping("/listByProfessor/{professorName}")
-//    public ResponseEntity<JsonNode> listTraitementsByProfessor(@PathVariable String professorName) {
-//        // Updated SPARQL query for Traitement filtered by professor name
-//        String query =  "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n" +
-//                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-//                "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" +
-//                "SELECT ?aPourNomTrait ?aPourMateriels ?aPourDureeTrait ?aPourMedicaments ?aPourUnProfDeSante\n" +
-//                "WHERE {\n" +
-//                "  ?traitement rdf:type/rdfs:subClassOf* sante:Traitement.\n" +
-//                "  ?traitement sante:aPourNomTrait ?aPourNomTrait.\n" +
-//                "  ?traitement sante:aPourMateriels ?aPourMateriels.\n" +
-//                "  ?traitement sante:aPourDureeTrait ?aPourDureeTrait.\n" +
-//                "  ?traitement sante:aPourMedicaments ?aPourMedicaments.\n" +
-//                "  ?traitement sante:aPourUnProfDeSante ?aPourUnProfDeSante.\n" +
-//                "  FILTER(STR(?aPourUnProfDeSante) = \"" + professorName + "\")\n" +
-//                "}";
-//
-//        return ResponseEntity.ok(rdfService.queryRDFJson(query));
-//    }
+    @GetMapping("/listByProfessor/{professorName}")
+    public ResponseEntity<JsonNode> listTraitementsByProfessor(@PathVariable String professorName) {
+        // Updated SPARQL query for Traitement filtered by professor name
+        String query = "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n" +
+                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" +
+                "SELECT ?aPourNomTrait ?aPourMateriels ?aPourDureeTrait ?aPourMedicaments ?aPourUnProfDeSante\n" +
+                "WHERE {\n" +
+                "  ?traitement rdf:type/rdfs:subClassOf* sante:Traitement.\n" +
+                "  ?traitement sante:aPourNomTrait ?aPourNomTrait.\n" +
+                "  ?traitement sante:aPourMateriels ?aPourMateriels.\n" +
+                "  ?traitement sante:aPourDureeTrait ?aPourDureeTrait.\n" +
+                "  ?traitement sante:aPourMedicaments ?aPourMedicaments.\n" +
+                "  ?traitement sante:aPourUnProfDeSante ?aPourUnProfDeSante.\n" +
+                "  FILTER(STR(?aPourUnProfDeSante) = \"" + professorName + "\")\n" +
+                "}";
+
+        return ResponseEntity.ok(rdfService.queryRDFJson(query));
+    }
+
 }
