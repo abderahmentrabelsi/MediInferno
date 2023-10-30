@@ -117,6 +117,16 @@ public class RDFService {
         return resultList;
     }
 
+    public <T> T queryToObject(String query, Class<T> type) {
+        var res = this.queryRDFJson(query);
+        // use jackson databind to convert json to object
+        try {
+            return objectMapper.treeToValue(res, type);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException("Failed to convert JSON to " + type.getName(), e);
+        }
+    }
+
     public <T> List<T> queryToList(String query, Class<T> type) {
         var res = this.queryRDFJson(query);
         return this.convertJsonToListOfType(res, type);

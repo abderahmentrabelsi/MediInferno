@@ -2,7 +2,10 @@ package io.mkadmi.antologieapi.controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import io.mkadmi.antologieapi.dto.EtablissementDeSanteDTO;
+import io.mkadmi.antologieapi.dto.EtablissementReductionStatsDTO;
+import io.mkadmi.antologieapi.dto.EtablissementStatsDTO;
 import io.mkadmi.antologieapi.services.RDFService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -17,6 +20,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/etablissement")
+
 public class EtablissementController {
     @Autowired
     RDFService rdfService;
@@ -60,8 +64,9 @@ public class EtablissementController {
         var etablissementList = rdfService.queryToList(query, EtablissementDeSanteDTO.class);
         return ResponseEntity.ok(etablissementList);
     }
+
     @GetMapping("/stats")
-    public ResponseEntity<JsonNode> getEtablissementStats() {
+    public ResponseEntity<EtablissementStatsDTO> getEtablissementStats() {
         String query = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n" +
                 "SELECT\n" +
@@ -73,13 +78,13 @@ public class EtablissementController {
                 "  ?etablissement_de_sante sante:aUneCapacite ?capacite.\n" +
                 "}";
 
-        JsonNode stats = rdfService.queryRDFJson(query);
+        var stats = rdfService.queryToObject(query, EtablissementStatsDTO.class);
         return ResponseEntity.ok(stats);
     }
 
 
     @GetMapping("/reductionStats")
-    public ResponseEntity<JsonNode> getEtablissementReductionStats() {
+    public ResponseEntity<EtablissementReductionStatsDTO> getEtablissementReductionStats() {
         String query = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n" +
                 "SELECT\n" +
@@ -92,11 +97,7 @@ public class EtablissementController {
                 "  ?etablissement_de_sante sante:apourTauxDeReduction ?tauxDeReduction.\n" +
                 "}";
 
-        JsonNode reductionStats = rdfService.queryRDFJson(query);
+        var reductionStats = rdfService.queryToObject(query, EtablissementReductionStatsDTO.class);
         return ResponseEntity.ok(reductionStats);
     }
-
-
-
-
 }
