@@ -17,9 +17,8 @@ public class PatientController {
     @GetMapping("/list")
     public ResponseEntity<JsonNode> listPatients() {
 
-        // SPARQL query with provided prefixes
-        String query =
-                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+        //language=SPARQL
+        String query =  "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                         "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n" +
                         "SELECT ?patient ?nom ?dateDeNaissance ?age ?adresse ?aConsulté ?aMaladie ?dossierMédical\n" +
                         "WHERE {\n" +

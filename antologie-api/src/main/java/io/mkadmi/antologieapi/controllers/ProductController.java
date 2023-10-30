@@ -20,8 +20,7 @@ public class ProductController {
     public ResponseEntity<JsonNode> listProduct() {
 
         //language=SPARQL
-        String query=
-                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+        String query=   "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                         "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" +
                         "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n" +
                         "SELECT ?aPourNom ?aAvecDosage ?aDesEffetsSecondaires ?aDesInstructions ?pharmacieName\n" +
