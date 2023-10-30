@@ -28,6 +28,8 @@ const areas = [
       { label: 'Medical Labo', path: '/medicalLabo', absolute: true },
       { label: 'Medical Equipments', path: '/equipement', absolute: true },
       { label: 'Diseases', path: '/maladies', absolute: true },
+      { label: 'Vaccinations', path: '/vaccins', absolute: true },
+
     ]
   }
 ];
