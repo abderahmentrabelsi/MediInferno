@@ -972,14 +972,14 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Produit_Pharmaceutique"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aUnTraitement"/>
-                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aDesMédicamentsPrescrits"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Patient"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aDesMédicamentsPrescrits"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Patient"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aUnTraitement"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1212,15 +1212,15 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Sante"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aConsulté"/>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Professionnel_de_la_sante"/>
-                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aConsulté"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Professionnel_de_la_sante"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1599,6 +1599,14 @@
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ABC_Pharmacy"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Ambu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Ambu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Ambulance"/>
+    </owl:NamedIndividual>
     
 
 
@@ -2232,12 +2240,36 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#fiat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#fiat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Véhicule_médicalisé"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#golf -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#golf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Véhicule_soins__domicile"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#neuro1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#neuro1">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#neurologie"/>
         <aPourDesSpecialiste>3</aPourDesSpecialiste>
         <usedby rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Karen_Anderson,_Speech-Language_Pathologist"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#partner -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#partner">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#vehicule_de_transport"/>
     </owl:NamedIndividual>
     
 
@@ -2259,6 +2291,69 @@
         <aPourNom>rougeole</aPourNom>
         <aPourSymptomes>Conjonctivite , fievre</aPourSymptomes>
         <aPourVaccin rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ROR"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#salDeRev -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#salDeRev">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Salle_de_reveil"/>
+        <fait_travailler>28</fait_travailler>
+        <estReservee>non</estReservee>
+        <aPourNbrDePations>19</aPourNbrDePations>
+        <contient rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Chaise_Dentaire"/>
+        <abrite rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Emily_Miller,_MD"/>
+        <abrite rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Michael_Brown,_MD"/>
+        <abrite rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Sandra_Martinez,_PharmD"/>
+        <abrite rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Susan_Adams,_MD"/>
+        <contient rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Scalpel"/>
+        <contient rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Stethoscope"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#salle1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#salle1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Salle_d&apos;accouchement"/>
+        <aPourNbrDePations>4</aPourNbrDePations>
+        <fait_travailler>92</fait_travailler>
+        <estReservee>oui</estReservee>
+        <contient rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Chaise_Dentaire"/>
+        <abrite rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
+        <contient rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Scalpel"/>
+        <contient rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Stethoscope"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#salledUrg1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#salledUrg1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Salle_d&apos;urgence"/>
+        <estReservee>oui</estReservee>
+        <fait_travailler>112</fait_travailler>
+        <aPourNbrDePations>38</aPourNbrDePations>
+        <contient rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Chaise_Dentaire"/>
+        <abrite rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Sandra_Martinez,_PharmD"/>
+        <contient rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Scalpel"/>
+        <contient rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Stethoscope"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#saloperation1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#saloperation1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Salle_d&apos;opération"/>
+        <fait_travailler>193</fait_travailler>
+        <estReservee>oui</estReservee>
+        <aPourNbrDePations>284</aPourNbrDePations>
+        <contient rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Chaise_Dentaire"/>
+        <abrite rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Sandra_Martinez,_PharmD"/>
+        <contient rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Scalpel"/>
+        <contient rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Stethoscope"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
