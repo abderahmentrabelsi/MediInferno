@@ -24,49 +24,44 @@ public class PatientController {
     RDFService rdfService;
 
     @GetMapping("/list")
-    public ResponseEntity<List<PatientResponseDTO>> listPatients() {
+    public ResponseEntity<List<PatientResponseDTO>> listOrSearchPatients(@RequestParam(required = false) String q) {
+        String query;
 
-        //language=SPARQL
-        String query =  "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-                        "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n" +
-                        "SELECT ?patient ?nom ?dateDeNaissance ?age ?adresse ?aConsulté ?aMaladie ?dossierMédical\n" +
-                        "WHERE {\n" +
-                        "  ?patient rdf:type sante:Patient.\n" +
-                        "  ?patient sante:aPourNom ?nom.\n" +
-                        "  ?patient sante:aPourDateDeNaissance ?dateDeNaissance.\n" +
-                        "  ?patient sante:aPourAge ?age.\n" +
-                        "  ?patient sante:apourAdresse ?adresse.\n" +
-                        "  OPTIONAL { ?patient sante:aConsulté ?aConsulté. }\n" +
-                        "  OPTIONAL { ?patient sante:aMaladie ?aMaladie. }\n" +
-                        "  OPTIONAL { ?patient sante:aUnNuméroDeDossierMédical ?dossierMédical. }\n" +
-                        "}";
-
-        List<PatientResponseDTO> patientList = rdfService.queryToList(query, PatientResponseDTO.class);
-        return ResponseEntity.ok(patientList);
-    }
-
-    @GetMapping("/by-name")
-    public ResponseEntity<List<PatientResponseDTO>> getPatientByName(@RequestParam String name) {
-        String query = String.format(
-                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-                        "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n" +
-                        "SELECT ?patient ?nom ?dateDeNaissance ?age ?adresse ?aConsulté ?aMaladie ?dossierMédical\n" +
-                        "WHERE {\n" +
-                        "  ?patient rdf:type sante:Patient.\n" +
-                        "  ?patient sante:aPourNom ?nom.\n" +
-                        "  FILTER(?nom = \"%s\")\n" +
-                        "  ?patient sante:aPourDateDeNaissance ?dateDeNaissance.\n" +
-                        "  ?patient sante:aPourAge ?age.\n" +
-                        "  ?patient sante:apourAdresse ?adresse.\n" +
-                        "  OPTIONAL { ?patient sante:aConsulté ?aConsulté. }\n" +
-                        "  OPTIONAL { ?patient sante:aMaladie ?aMaladie. }\n" +
-                        "  OPTIONAL { ?patient sante:aUnNuméroDeDossierMédical ?dossierMédical. }\n" +
-                        "}", name
-        );
+        if (q == null || q.isEmpty()) {
+            query = "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                    "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n" +
+                    "SELECT ?patient ?nom ?dateDeNaissance ?age ?adresse ?aConsulté ?aMaladie ?dossierMédical\n" +
+                    "WHERE {\n" +
+                    "  ?patient rdf:type sante:Patient.\n" +
+                    "  ?patient sante:aPourNom ?nom.\n" +
+                    "  ?patient sante:aPourDateDeNaissance ?dateDeNaissance.\n" +
+                    "  ?patient sante:aPourAge ?age.\n" +
+                    "  ?patient sante:apourAdresse ?adresse.\n" +
+                    "  OPTIONAL { ?patient sante:aConsulté ?aConsulté. }\n" +
+                    "  OPTIONAL { ?patient sante:aMaladie ?aMaladie. }\n" +
+                    "  OPTIONAL { ?patient sante:aUnNuméroDeDossierMédical ?dossierMédical. }\n" +
+                    "}";
+        } else {
+            query = String.format(
+                    "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                            "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n" +
+                            "SELECT ?patient ?nom ?dateDeNaissance ?age ?adresse ?aConsulté ?aMaladie ?dossierMédical\n" +
+                            "WHERE {\n" +
+                            "  ?patient rdf:type sante:Patient.\n" +
+                            "  ?patient sante:aPourNom ?nom.\n" +
+                            "  FILTER(?nom = \"%s\")\n" +
+                            "  ?patient sante:aPourDateDeNaissance ?dateDeNaissance.\n" +
+                            "  ?patient sante:aPourAge ?age.\n" +
+                            "  ?patient sante:apourAdresse ?adresse.\n" +
+                            "  OPTIONAL { ?patient sante:aConsulté ?aConsulté. }\n" +
+                            "  OPTIONAL { ?patient sante:aMaladie ?aMaladie. }\n" +
+                            "  OPTIONAL { ?patient sante:aUnNuméroDeDossierMédical ?dossierMédical. }\n" +
+                            "}", q
+            );
+        }
 
         List<PatientResponseDTO> patientList = rdfService.queryToList(query, PatientResponseDTO.class);
         return ResponseEntity.ok(patientList);
     }
 
-    //exemple for search : GET http://localhost:8020/patients/by-name?name=Mary_Johnson
 }

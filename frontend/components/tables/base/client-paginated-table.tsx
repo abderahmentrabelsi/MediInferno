@@ -66,9 +66,12 @@ const ClientPaginatedTable = <
   }, [rawData, page, rowsPerPage]);
 
   const columnKeys = useMemo(() => {
-    const keys = Object.keys(data?.[0] ?? {}) as Array<keyof T>;
+    const keys =
+      rawData && rawData.length > 0
+        ? (Object.keys(rawData[0]) as Array<keyof T>)
+        : [];
     return keys.filter((key) => !excludeKeys.includes(key as K));
-  }, [data, excludeKeys]);
+  }, [rawData, excludeKeys]);
 
   if (isError) {
     return <div>Error: {error?.toString()}</div>;
