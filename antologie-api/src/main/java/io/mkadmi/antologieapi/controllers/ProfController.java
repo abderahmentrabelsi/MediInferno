@@ -17,7 +17,7 @@ public class ProfController {
     RDFService rdfService;
 
     @GetMapping("/list")
-    public ResponseEntity<JsonNode> listEtablissement() {
+    public ResponseEntity<JsonNode> listDocteurs() {
 
         //language=SPARQL
         String query =
