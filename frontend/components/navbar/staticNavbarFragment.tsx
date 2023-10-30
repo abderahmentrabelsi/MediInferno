@@ -22,7 +22,8 @@ const areas = [
       { label: 'Home', path: '/' },
       { label: 'Patients', path: '/patients', absolute: true },
       { label: 'Etablissements', path: '/etablissements', absolute: true },
-      { label: 'Products', path: '/products', absolute: true }
+      { label: 'Products', path: '/products', absolute: true },
+      { label: 'Professionnels', path: '/professionnels', absolute: true }
     ]
   }
 ];
