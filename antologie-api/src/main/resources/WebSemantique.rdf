@@ -1606,6 +1606,13 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Ambu">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Ambulance"/>
+        <aPourConducteur>Mounir</aPourConducteur>
+        <estResrvee>non</estResrvee>
+        <aPourNbrPlaces>12</aPourNbrPlaces>
+        <ammene rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
+        <transporte rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
+        <transporte rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Scalpel"/>
+        <transporte rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Stethoscope"/>
     </owl:NamedIndividual>
     
 
@@ -2244,6 +2251,12 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#fiat">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Véhicule_médicalisé"/>
+        <estResrvee>oui</estResrvee>
+        <aPourConducteur>slim</aPourConducteur>
+        <aPourNbrPlaces>18</aPourNbrPlaces>
+        <ammene rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
+        <transporte rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Scalpel"/>
+        <transporte rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Stethoscope"/>
     </owl:NamedIndividual>
     
 
@@ -2252,6 +2265,12 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#golf">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Véhicule_soins__domicile"/>
+        <aPourConducteur>khalil</aPourConducteur>
+        <aPourNbrPlaces>4</aPourNbrPlaces>
+        <estResrvee>oui</estResrvee>
+        <ammene rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
+        <transporte rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Scalpel"/>
+        <transporte rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Stethoscope"/>
     </owl:NamedIndividual>
     
 
@@ -2270,6 +2289,14 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#partner">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#vehicule_de_transport"/>
+        <estResrvee>non</estResrvee>
+        <aPourNbrPlaces>119</aPourNbrPlaces>
+        <aPourConducteur>ali
+</aPourConducteur>
+        <ammene rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
+        <transporte rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#John_Smith"/>
+        <transporte rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Scalpel"/>
+        <transporte rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Stethoscope"/>
     </owl:NamedIndividual>
     
 
