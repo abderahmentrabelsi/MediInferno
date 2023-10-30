@@ -72,6 +72,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Medical_Labo_prop -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Medical_Labo_prop">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Medical_Labo"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Produit_Pharmaceutique"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Patient_Prop -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Patient_Prop"/>
@@ -382,6 +391,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aProduit -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aProduit">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Medical_Labo_prop"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aUnDiagnostic -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aUnDiagnostic">
@@ -542,6 +559,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#utilisePar -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#utilisePar">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Equipement_Medical"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Professionnel_de_la_sante"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Établissements_prop -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Établissements_prop"/>
@@ -594,6 +620,12 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Pharmacie"/>
         <rdfs:range rdf:resource="&xsd;boolean"/>
     </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aEquipement -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aEquipement"/>
     
 
 
@@ -704,6 +736,12 @@
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourSymptomes -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourSymptomes"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aTechniciens -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aTechniciens"/>
     
 
 
@@ -820,6 +858,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Equipement_Medical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Equipement_Medical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Sante"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Etablissement_de_sante -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Etablissement_de_sante">
@@ -852,6 +898,38 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Etablissement_de_sante"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Laboratoire_Analyse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Laboratoire_Analyse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Medical_Labo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Laboratoire_Recherche -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Laboratoire_Recherche">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Medical_Labo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Laboratoire_de_Microbiologie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Laboratoire_de_Microbiologie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Medical_Labo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Laboratoire_de_Pathologie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Laboratoire_de_Pathologie">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Medical_Labo"/>
     </owl:Class>
     
 
@@ -894,6 +972,46 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Anti-inflammatoire"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Chirugical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Chirugical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Equipement_Medical"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Dentaire -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Dentaire">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Equipement_Medical"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Diagnostique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Diagnostique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Equipement_Medical"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Medical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Medical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Equipement_Medical"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Medical_Labo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Medical_Labo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Sante"/>
     </owl:Class>
     
 
@@ -1257,6 +1375,20 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#BIOTOP01 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#BIOTOP01">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Laboratoire_Analyse"/>
+        <aEquipement>Réactifs, échantillons de substances</aEquipement>
+        <aTechniciens>Thomas Boucher, Sophie Gagnon</aTechniciens>
+        <aPourNom>BIOTOP01</aPourNom>
+        <aProduit rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Amoxicillin"/>
+        <aProduit rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamin_C"/>
+        <aProduit rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamin_D"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Cancer -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Cancer"/>
@@ -1272,6 +1404,16 @@
         <aPourNom>Celebrex</aPourNom>
         <aDesEffetsSecondaires>nausea, headache,</aDesEffetsSecondaires>
         <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hela_rokbi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Chaise_Dentaire -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Chaise_Dentaire">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Dentaire"/>
+        <aPourNom>Chaise Dentaire</aPourNom>
+        <utilisePar rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Nurse_Jessica_Wilson,_RN"/>
     </owl:NamedIndividual>
     
 
@@ -1370,6 +1512,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Echographe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Echographe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Medical"/>
+        <aPourNom>Echographe</aPourNom>
+        <utilisePar rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Sandra_Martinez,_PharmD"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Family_Health_Clinic -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Family_Health_Clinic"/>
@@ -1416,6 +1568,19 @@
         <aPourMedicaments rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Massage"/>
         <aPourMedicaments rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamin_C"/>
         <aPourMedicaments rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Zoloft"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#IRMM21 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#IRMM21">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Laboratoire_Recherche"/>
+        <aEquipement>Microscopes électroniques, centrifugeuses</aEquipement>
+        <aPourNom>IRMM21</aPourNom>
+        <aTechniciens>Dr. Gabriel Moreau, Dr. Charlotte Lavoie</aTechniciens>
+        <aProduit rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Celebrex"/>
+        <aProduit rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Prozac"/>
     </owl:NamedIndividual>
     
 
@@ -1472,6 +1637,18 @@
         <aPourNomEtab>Karen SLP</aPourNomEtab>
         <aUneCapacite rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#20300"/>
         <aPourNuméroDeTéléphone rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#55555555"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#MICROTEC07 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#MICROTEC07">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Laboratoire_de_Microbiologie"/>
+        <aPourNom>MICROTEC07</aPourNom>
+        <aTechniciens>Dr. Catherine Lefèvre, Jean-Paul Martinez</aTechniciens>
+        <aEquipement>Incubateurs, agitateurs, autoclaves</aEquipement>
+        <aProduit rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Ibuprofen"/>
     </owl:NamedIndividual>
     
 
@@ -1562,6 +1739,19 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#PATHSOL04 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#PATHSOL04">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Laboratoire_de_Pathologie"/>
+        <aTechniciens>Dr. François Dubois, Dr. Sophie Laurent</aTechniciens>
+        <aPourNom>PATHSOL04</aPourNom>
+        <aEquipement>Microscopes à fluorescence, microtomes</aEquipement>
+        <aProduit rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Prozac"/>
+        <aProduit rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Zoloft"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Prozac -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Prozac">
@@ -1597,10 +1787,30 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Scalpel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Scalpel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Chirugical"/>
+        <aPourNom>Scalpel</aPourNom>
+        <utilisePar rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Emily_Miller,_MD"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Slim -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Slim">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Professionnel_de_la_sante"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Stethoscope -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Stethoscope">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Diagnostique"/>
+        <aPourNom>Stethoscope</aPourNom>
+        <utilisePar rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr_Emily_Anderson"/>
     </owl:NamedIndividual>
     
 
