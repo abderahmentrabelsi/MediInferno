@@ -72,7 +72,6 @@ const ProductComponent = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
-      <br></br>
         <div style={{ display: "flex", flexWrap: "wrap" }}>
             {filteredProducts.map(product => (
                 <Card className="py-4" key={product.id} style={cardStyle}>

@@ -24,7 +24,8 @@ const areas = [
       { label: 'Etablissements', path: '/etablissements', absolute: true },
       { label: 'Products', path: '/products', absolute: true },
       { label: 'Professionnels', path: '/professionnels', absolute: true },
-      { label: 'Traitements', path: '/traitements', absolute: true }
+      { label: 'Traitements', path: '/traitements', absolute: true },
+      { label: 'Medical Labo', path: '/medicalLabo', absolute: true },
     ]
   }
 ];
