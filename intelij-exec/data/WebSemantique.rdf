@@ -139,6 +139,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vaccin_prop -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vaccin_prop"/>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aAvecDosage -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aAvecDosage">
@@ -302,6 +308,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourIinjection -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourIinjection">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vaccin_prop"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourMedicaments -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourMedicaments">
@@ -376,6 +390,14 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_Psychologique"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Traitement_physiotherapie"/>
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#traitement_props"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourVaccin -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourVaccin">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vaccin_prop"/>
     </owl:ObjectProperty>
     
 
@@ -559,6 +581,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#utilisePar -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#utilisePar">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Equipement_Medical"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Professionnel_de_la_sante"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Établissements_prop -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Établissements_prop"/>
@@ -664,6 +695,12 @@
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourExperience -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourExperience"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourInjection -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aPourInjection"/>
     
 
 
@@ -849,6 +886,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Equipement_Medical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Equipement_Medical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Sante"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Etablissement_de_sante -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Etablissement_de_sante">
@@ -924,13 +969,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Respiratoire"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Cardiovasculaire"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#aMaladie"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Cardiovasculaire"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Respiratoire"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -955,6 +1000,38 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Anti-inflammatoire"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Chirugical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Chirugical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Equipement_Medical"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Dentaire -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Dentaire">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Equipement_Medical"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Diagnostique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Diagnostique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Equipement_Medical"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Medical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Medical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Equipement_Medical"/>
     </owl:Class>
     
 
@@ -1134,6 +1211,30 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vaccin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vaccin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Sante"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vaccin_ARN -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vaccin_ARN">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vaccin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vaccin_Virus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vaccin_Virus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vaccin"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamine -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vitamine">
@@ -1307,6 +1408,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Asthma">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Respiratoire"/>
         <aPourSymptomes>Difficulté a parler , Essoufflement</aPourSymptomes>
+        <aPourNom>Asthma</aPourNom>
         <aUnTraitement rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Celebrex"/>
     </owl:NamedIndividual>
     
@@ -1359,9 +1461,31 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Chaise_Dentaire -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Chaise_Dentaire">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Dentaire"/>
+        <aPourNom>Chaise Dentaire</aPourNom>
+        <utilisePar rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Nurse_Jessica_Wilson,_RN"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Community_Drugstore"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Corona -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Corona">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Respiratoire"/>
+        <aPourNom>Corona</aPourNom>
+        <aPourSymptomes>douleur , fievre , essoufflement</aPourSymptomes>
+        <aPourVaccin rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Moderna"/>
+        <aPourVaccin rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Pfizer"/>
+    </owl:NamedIndividual>
     
 
 
@@ -1370,6 +1494,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Coronary_Artery_Disease">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Cardiovasculaire"/>
+        <aPourNom>Coronary_Artery</aPourNom>
         <aPourSymptomes>Palpitations</aPourSymptomes>
         <aUnTraitement rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Amoxicillin"/>
     </owl:NamedIndividual>
@@ -1453,9 +1578,30 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Echographe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Echographe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Medical"/>
+        <aPourNom>Echographe</aPourNom>
+        <utilisePar rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Sandra_Martinez,_PharmD"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Family_Health_Clinic -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Family_Health_Clinic"/>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Grippe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Grippe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Respiratoire"/>
+        <aPourNom>Grippe</aPourNom>
+        <aPourSymptomes>fivere , douleur </aPourSymptomes>
+        <aPourVaccin rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Influenza"/>
+    </owl:NamedIndividual>
     
 
 
@@ -1479,6 +1625,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hypertensive_Heart_Disease">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Cardiovasculaire"/>
+        <aPourNom>Hypertensive_Heart</aPourNom>
         <aPourSymptomes>Essoufflement , Fatigue</aPourSymptomes>
         <aUnTraitement rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Amoxicillin"/>
         <aUnTraitement rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Celebrex"/>
@@ -1539,6 +1686,17 @@
         <aDesEffetsSecondaires>stomach pain, heartburn,</aDesEffetsSecondaires>
         <aPourNom>Ibuprofen</aPourNom>
         <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hela_rokbi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Influenza -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Influenza">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vaccin_Virus"/>
+        <aPourInjection>intramusculaires</aPourInjection>
+        <aDesEffetsSecondaires>Fatigue , Fièvre , Fatigue</aDesEffetsSecondaires>
+        <aPourNom>Influenza</aPourNom>
     </owl:NamedIndividual>
     
 
@@ -1614,6 +1772,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Moderna -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Moderna">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vaccin_ARN"/>
+        <aPourNom>Moderna</aPourNom>
+        <aDesEffetsSecondaires>Fatigue , Fièvre , Douleur</aDesEffetsSecondaires>
+        <aPourInjection>intramusculaires</aPourInjection>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Mounir -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Mounir">
@@ -1683,6 +1852,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Pfizer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Pfizer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vaccin_ARN"/>
+        <aPourInjection>intramusculaires</aPourInjection>
+        <aPourNom>Pfizer</aPourNom>
+        <aDesEffetsSecondaires>Douleur , Fièvre , Fatigue</aDesEffetsSecondaires>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Prozac -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Prozac">
@@ -1692,6 +1872,17 @@
         <aDesInstructions>Take with or without food. Follow doctor&apos;s instructions.</aDesInstructions>
         <aAvecDosage>20mg to 80mg per day</aAvecDosage>
         <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hela_rokbi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ROR -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ROR">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Vaccin_Virus"/>
+        <aDesEffetsSecondaires>rougeur , Douleur ,Fièvre</aDesEffetsSecondaires>
+        <aPourInjection>sous-cutanées</aPourInjection>
+        <aPourNom>ROR</aPourNom>
     </owl:NamedIndividual>
     
 
@@ -1718,10 +1909,30 @@
     
 
 
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Scalpel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Scalpel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Chirugical"/>
+        <aPourNom>Scalpel</aPourNom>
+        <utilisePar rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr._Emily_Miller,_MD"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Slim -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Slim">
         <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Professionnel_de_la_sante"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Stethoscope -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Stethoscope">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Materiel_Diagnostique"/>
+        <aPourNom>Stethoscope</aPourNom>
+        <utilisePar rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Dr_Emily_Anderson"/>
     </owl:NamedIndividual>
     
 
@@ -1781,6 +1992,17 @@
         <aAvecDosage>50mg to 200mg per day</aAvecDosage>
         <aDesInstructions>Take Zoloft with or without food, usually once daily in the morning.</aDesInstructions>
         <Pharmacies_prop rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Hela_rokbi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#rougeole -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#rougeole">
+        <rdf:type rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#Maladie_Respiratoire"/>
+        <aPourNom>rougeole</aPourNom>
+        <aPourSymptomes>Conjonctivite , fievre</aPourSymptomes>
+        <aPourVaccin rdf:resource="http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#ROR"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
