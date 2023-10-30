@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/specialite")
@@ -34,4 +35,23 @@ public class SpecialiteController {
                 + "}";
         return ResponseEntity.ok(rdfService.queryRDFJson(query));
     }
+    @GetMapping("/search-by-etablissement")
+    public ResponseEntity<JsonNode> searchByEtablissement(@RequestParam String etablissementName) {
+        String query = String.format("PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
+                + "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#> "
+                + "SELECT ?specialite "
+                + "WHERE { "
+                + "  ?etablissement sante:usedby ?specialite. "
+                + "  ?specialite rdf:type/rdfs:subClassOf* sante:specialite. "
+                + "  OPTIONAL { "
+                + "    ?etablissement sante:aPourNomEtab ?aPourNomEtab. "
+                + "  } "
+                + "  FILTER(str(?aPourNomEtab) = \"%s\") "
+                + "}", etablissementName);
+
+        return ResponseEntity.ok(rdfService.queryRDFJson(query));
+    }
+
+
+
 }
