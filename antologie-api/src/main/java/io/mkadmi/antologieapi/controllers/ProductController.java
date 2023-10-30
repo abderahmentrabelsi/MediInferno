@@ -21,14 +21,16 @@ public class ProductController {
         String query=
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                         "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" +
-                        "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n\n" +
-                        "SELECT ?produit_pharmaceutique ?aAvecDosage ?aDesEffetsSecondaires ?aDesInstructions ?aPharmacie\n" +
+                        "PREFIX sante: <http://www.semanticweb.org/msi/ontologies/2023/9/sante_ont#>\n" +
+                        "SELECT ?aPourNom ?aAvecDosage ?aDesEffetsSecondaires ?aDesInstructions ?pharmacieName\n" +
                         "WHERE {\n" +
-                        "  ?produit_pharmaceutique rdf:type sante:Produit_Pharmaceutique ;\n" +
+                        "  ?produit_pharmaceutique rdf:type/rdfs:subClassOf* sante:Produit_Pharmaceutique ;\n" +
+                        "                        sante:aPourNom ?aPourNom ;\n" +
                         "                        sante:aAvecDosage ?aAvecDosage ;\n" +
                         "                        sante:aDesEffetsSecondaires ?aDesEffetsSecondaires ;\n" +
                         "                        sante:aDesInstructions ?aDesInstructions ;\n" +
                         "                        sante:Pharmacies_prop ?aPharmacie .\n" +
+                        "                        ?aPharmacie sante:aPourNom ?pharmacieName .\n" +
                         "}";
 
         return ResponseEntity.ok(rdfService.queryRDFJson(query));
