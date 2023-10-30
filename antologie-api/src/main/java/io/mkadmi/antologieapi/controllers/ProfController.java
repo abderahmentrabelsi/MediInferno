@@ -59,6 +59,7 @@ public class ProfController {
                         "  ?professionnel_de_la_sante sante:aConsulté ?patient.\n" +
                         "  ?patient sante:aPourNom ?patientName.\n" +
                         "  FILTER (str(?nom) = \"" + name + "\")\n" +
+                        
                         "}";
 
         return ResponseEntity.ok(rdfService.queryRDFJson(query));
