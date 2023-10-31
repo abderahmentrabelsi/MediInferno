@@ -62,14 +62,13 @@ const ClientPaginatedTable = <
     const start = (page - 1) * rowsPerPage;
     const end = start + rowsPerPage;
 
-    return rawData?.slice(start, end) ?? [];
+    return rawData ? rawData.slice(start, end) : [];
   }, [rawData, page, rowsPerPage]);
 
   const columnKeys = useMemo(() => {
-    const keys =
-      rawData && rawData.length > 0
-        ? (Object.keys(rawData[0]) as Array<keyof T>)
-        : [];
+    const keys = rawData?.length
+      ? (Object.keys(rawData[0]) as Array<keyof T>)
+      : [];
     return keys.filter((key) => !excludeKeys.includes(key as K));
   }, [rawData, excludeKeys]);
 
@@ -109,14 +108,18 @@ const ClientPaginatedTable = <
           }
         >
           <TableHeader>
-            {columnKeys.map((columnKey) => (
-              <TableColumn
-                key={columnKey as string}
-                className="text-xs uppercase"
-              >
-                {snakeCaseToHumanReadable(String(columnKey)).toUpperCase()}
-              </TableColumn>
-            ))}
+            {columnKeys.length ? (
+              columnKeys.map((columnKey) => (
+                <TableColumn
+                  key={columnKey as string}
+                  className="text-xs uppercase"
+                >
+                  {snakeCaseToHumanReadable(String(columnKey)).toUpperCase()}
+                </TableColumn>
+              ))
+            ) : (
+              <TableColumn>No Data</TableColumn>
+            )}
           </TableHeader>
           <TableBody
             isLoading={isLoading}

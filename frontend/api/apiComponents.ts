@@ -9,6 +9,200 @@ import type * as Fetcher from './apiFetcher';
 import { apiFetch } from './apiFetcher';
 import type * as Schemas from './apiSchemas';
 
+export type GetVehicleStatsError = Fetcher.ErrorWrapper<undefined>;
+
+export type GetVehicleStatsVariables = ApiContext['fetcherOptions'];
+
+export const fetchGetVehicleStats = (
+  variables: GetVehicleStatsVariables,
+  signal?: AbortSignal
+) =>
+  apiFetch<
+    Schemas.VehicleStatsDTO,
+    GetVehicleStatsError,
+    undefined,
+    {},
+    {},
+    {}
+  >({ url: '/vehic/stats', method: 'get', ...variables, signal });
+
+export const useGetVehicleStats = <TData = Schemas.VehicleStatsDTO>(
+  variables: GetVehicleStatsVariables,
+  options?: Omit<
+    reactQuery.UseQueryOptions<
+      Schemas.VehicleStatsDTO,
+      GetVehicleStatsError,
+      TData
+    >,
+    'queryKey' | 'queryFn' | 'initialData'
+  >
+) => {
+  const { fetcherOptions, queryOptions, queryKeyFn } = useApiContext(options);
+  return reactQuery.useQuery<
+    Schemas.VehicleStatsDTO,
+    GetVehicleStatsError,
+    TData
+  >({
+    queryKey: queryKeyFn({
+      path: '/vehic/stats',
+      operationId: 'getVehicleStats',
+      variables
+    }),
+    queryFn: ({ signal }) =>
+      fetchGetVehicleStats({ ...fetcherOptions, ...variables }, signal),
+    ...options,
+    ...queryOptions
+  });
+};
+
+export type GetAllVehiclesError = Fetcher.ErrorWrapper<undefined>;
+
+export type GetAllVehiclesResponse = Schemas.VehicleResponseDTO[];
+
+export type GetAllVehiclesVariables = ApiContext['fetcherOptions'];
+
+export const fetchGetAllVehicles = (
+  variables: GetAllVehiclesVariables,
+  signal?: AbortSignal
+) =>
+  apiFetch<GetAllVehiclesResponse, GetAllVehiclesError, undefined, {}, {}, {}>({
+    url: '/vehic/all',
+    method: 'get',
+    ...variables,
+    signal
+  });
+
+export const useGetAllVehicles = <TData = GetAllVehiclesResponse>(
+  variables: GetAllVehiclesVariables,
+  options?: Omit<
+    reactQuery.UseQueryOptions<
+      GetAllVehiclesResponse,
+      GetAllVehiclesError,
+      TData
+    >,
+    'queryKey' | 'queryFn' | 'initialData'
+  >
+) => {
+  const { fetcherOptions, queryOptions, queryKeyFn } = useApiContext(options);
+  return reactQuery.useQuery<
+    GetAllVehiclesResponse,
+    GetAllVehiclesError,
+    TData
+  >({
+    queryKey: queryKeyFn({
+      path: '/vehic/all',
+      operationId: 'getAllVehicles',
+      variables
+    }),
+    queryFn: ({ signal }) =>
+      fetchGetAllVehicles({ ...fetcherOptions, ...variables }, signal),
+    ...options,
+    ...queryOptions
+  });
+};
+
+export type GetSpecialiteStatsError = Fetcher.ErrorWrapper<undefined>;
+
+export type GetSpecialiteStatsVariables = ApiContext['fetcherOptions'];
+
+export const fetchGetSpecialiteStats = (
+  variables: GetSpecialiteStatsVariables,
+  signal?: AbortSignal
+) =>
+  apiFetch<
+    Schemas.SpecialiteStatsResponseDTO,
+    GetSpecialiteStatsError,
+    undefined,
+    {},
+    {},
+    {}
+  >({ url: '/specialite/stats', method: 'get', ...variables, signal });
+
+export const useGetSpecialiteStats = <
+  TData = Schemas.SpecialiteStatsResponseDTO
+>(
+  variables: GetSpecialiteStatsVariables,
+  options?: Omit<
+    reactQuery.UseQueryOptions<
+      Schemas.SpecialiteStatsResponseDTO,
+      GetSpecialiteStatsError,
+      TData
+    >,
+    'queryKey' | 'queryFn' | 'initialData'
+  >
+) => {
+  const { fetcherOptions, queryOptions, queryKeyFn } = useApiContext(options);
+  return reactQuery.useQuery<
+    Schemas.SpecialiteStatsResponseDTO,
+    GetSpecialiteStatsError,
+    TData
+  >({
+    queryKey: queryKeyFn({
+      path: '/specialite/stats',
+      operationId: 'getSpecialiteStats',
+      variables
+    }),
+    queryFn: ({ signal }) =>
+      fetchGetSpecialiteStats({ ...fetcherOptions, ...variables }, signal),
+    ...options,
+    ...queryOptions
+  });
+};
+
+export type ListSpecialiteQueryParams = {
+  q?: string;
+};
+
+export type ListSpecialiteError = Fetcher.ErrorWrapper<undefined>;
+
+export type ListSpecialiteResponse = Schemas.SpecialiteResponseDTO[];
+
+export type ListSpecialiteVariables = {
+  queryParams?: ListSpecialiteQueryParams;
+} & ApiContext['fetcherOptions'];
+
+export const fetchListSpecialite = (
+  variables: ListSpecialiteVariables,
+  signal?: AbortSignal
+) =>
+  apiFetch<
+    ListSpecialiteResponse,
+    ListSpecialiteError,
+    undefined,
+    {},
+    ListSpecialiteQueryParams,
+    {}
+  >({ url: '/specialite/list', method: 'get', ...variables, signal });
+
+export const useListSpecialite = <TData = ListSpecialiteResponse>(
+  variables: ListSpecialiteVariables,
+  options?: Omit<
+    reactQuery.UseQueryOptions<
+      ListSpecialiteResponse,
+      ListSpecialiteError,
+      TData
+    >,
+    'queryKey' | 'queryFn' | 'initialData'
+  >
+) => {
+  const { fetcherOptions, queryOptions, queryKeyFn } = useApiContext(options);
+  return reactQuery.useQuery<
+    ListSpecialiteResponse,
+    ListSpecialiteError,
+    TData
+  >({
+    queryKey: queryKeyFn({
+      path: '/specialite/list',
+      operationId: 'listSpecialite',
+      variables
+    }),
+    queryFn: ({ signal }) =>
+      fetchListSpecialite({ ...fetcherOptions, ...variables }, signal),
+    ...options,
+    ...queryOptions
+  });
+};
+
 export type GetPatientStatsError = Fetcher.ErrorWrapper<undefined>;
 
 export type GetPatientStatsVariables = ApiContext['fetcherOptions'];
@@ -260,6 +454,26 @@ export const useListEtablissement = <TData = ListEtablissementResponse>(
 };
 
 export type QueryOperation =
+  | {
+      path: '/vehic/stats';
+      operationId: 'getVehicleStats';
+      variables: GetVehicleStatsVariables;
+    }
+  | {
+      path: '/vehic/all';
+      operationId: 'getAllVehicles';
+      variables: GetAllVehiclesVariables;
+    }
+  | {
+      path: '/specialite/stats';
+      operationId: 'getSpecialiteStats';
+      variables: GetSpecialiteStatsVariables;
+    }
+  | {
+      path: '/specialite/list';
+      operationId: 'listSpecialite';
+      variables: ListSpecialiteVariables;
+    }
   | {
       path: '/patients/stats';
       operationId: 'getPatientStats';

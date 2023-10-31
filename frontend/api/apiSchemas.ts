@@ -3,6 +3,31 @@
  *
  * @version v0
  */
+export type VehicleStatsDTO = Record<string, any>;
+
+export type VehicleResponseDTO = Record<string, any>;
+
+export type SpecialiteStatsResponseDTO = {
+  /**
+   * @format int64
+   */
+  totalSpecialites?: number;
+  /**
+   * @format int32
+   */
+  minSpecialistes?: number;
+  /**
+   * @format int32
+   */
+  maxSpecialistes?: number;
+};
+
+export type SpecialiteResponseDTO = {
+  specialite?: string;
+  etablissementName?: string;
+  aPourDesSpecialiste?: string;
+};
+
 export type PatientStatsDTO = {
   /**
    * @format int32
@@ -30,8 +55,8 @@ export type PatientResponseDTO = {
   aConsulté?: string;
   aMaladie?: string;
   dossierMédical?: string;
-  amaladie?: string;
   aconsulté?: string;
+  amaladie?: string;
 };
 
 export type EtablissementStatsDTO = {
