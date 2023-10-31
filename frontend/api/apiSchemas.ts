@@ -3,9 +3,36 @@
  *
  * @version v0
  */
-export type VehicleStatsDTO = Record<string, any>;
+export type VehicleStatsDTO = {
+  /**
+   * @format int64
+   */
+  totalVehicles?: number;
+  /**
+   * @format int32
+   */
+  minPlaces?: number;
+  /**
+   * @format int32
+   */
+  maxPlaces?: number;
+  /**
+   * @format double
+   */
+  avgPlaces?: number;
+};
 
-export type VehicleResponseDTO = Record<string, any>;
+export type VehicleResponseDTO = {
+  vehicle?: string;
+  transporte?: string;
+  ammene?: string;
+  estResrvee?: boolean;
+  aPourConducteur?: string;
+  /**
+   * @format int32
+   */
+  aPourNbrPlaces?: number;
+};
 
 export type SpecialiteStatsResponseDTO = {
   /**
