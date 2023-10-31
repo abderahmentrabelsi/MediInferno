@@ -13,7 +13,7 @@ public class VehicleResponseDTO {
     private String ammene;
 
     @JsonProperty("estResrvee")
-    private boolean estResrvee;
+    private String estResrvee;
 
     @JsonProperty("aPourConducteur")
     private String aPourConducteur;

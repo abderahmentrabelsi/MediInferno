@@ -26,7 +26,7 @@ export type VehicleResponseDTO = {
   vehicle?: string;
   transporte?: string;
   ammene?: string;
-  estResrvee?: boolean;
+  estResrvee?: string;
   aPourConducteur?: string;
   /**
    * @format int32
