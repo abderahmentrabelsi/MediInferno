@@ -30,6 +30,7 @@ const areas = [
       { label: 'Medical Equipments', path: '/equipement', absolute: true },
       { label: 'Diseases', path: '/maladies', absolute: true },
       { label: 'Vaccinations', path: '/vaccins', absolute: true },
+      { label: 'Vehicules', path: '/vehicule', absolute: true },
 
     ]
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import SalleComponent from "./productsComponent";
+import VehiculeComponent from "./productsComponent";
 
 
 const DeliveryPage = () => {
@@ -11,10 +12,10 @@ const DeliveryPage = () => {
 
   return (
     <div>
-      <h1 style={{ textAlign: 'center', fontSize: '2rem' }}>SALLE</h1>
+      <h1 style={{ textAlign: 'center', fontSize: '2rem' }}>VEHICULES</h1>
       <br></br>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <SalleComponent />
+        <VehiculeComponent />
       </div>
     </div>
   );
